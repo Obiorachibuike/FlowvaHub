@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "reward_mug",
+      "description": "A branded coffee mug on a clean desk.",
+      "imageUrl": "https://images.unsplash.com/photo-1522012188892-24beb302783d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb2ZmZWUlMjBtdWd8ZW58MHx8fHwxNzY2MTQzMzA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coffee mug"
+    },
+    {
+      "id": "reward_shirt",
+      "description": "A person wearing a branded t-shirt.",
+      "imageUrl": "https://images.unsplash.com/photo-1696086152513-c74dc1d4b135?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0LXNoaXJ0fGVufDB8fHx8MTc2NjE0NzE4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "t-shirt"
+    },
+    {
+      "id": "reward_stickers",
+      "description": "A collection of vinyl stickers.",
+      "imageUrl": "https://images.unsplash.com/photo-1617539615469-369a567e16f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3RpY2tlcnMlMjBsYXB0b3B8ZW58MHx8fHwxNzY2MTg4MDUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "stickers laptop"
+    },
+    {
+      "id": "reward_mouse",
+      "description": "A sleek wireless mouse on a mousepad.",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1561023367-4431103a484f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21wdXRlciUyMG1vdXNlfGVufDB8fHx8MTc2NjEwODA3OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "computer mouse"
+    },
+    {
+      "id": "reward_headphones",
+      "description": "A pair of modern noise-cancelling headphones.",
+      "imageUrl": "https://images.unsplash.com/photo-1639452126848-874852607b6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGVhZHBob25lcyUyMGRlc2t8ZW58MHx8fHwxNzY2MTgzMjI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "headphones desk"
+    },
+    {
+      "id": "reward_giftcard",
+      "description": "A gift card with a celebratory theme.",
+      "imageUrl": "https://images.unsplash.com/photo-1637070155805-e6fbee6ec2cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnaWZ0JTIwY2FyZHxlbnwwfHx8fDE3NjYxNzgyMDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gift card"
+    }
+  ]
 }
