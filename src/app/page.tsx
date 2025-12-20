@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -15,43 +18,9 @@ const ToolIcon = ({ children, className }: { children: React.ReactNode, classNam
     </div>
 );
 
-export default function Home() {
-  return (
-    <div className="bg-white text-gray-900">
-        <div className="bg-black text-white text-xs py-2 text-center px-4">
-            🚀 Big news! The full Flowva experience + mobile apps are launching soon on iOS & Android
-        </div>
-
-        <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
-            <div className="flex items-center space-x-8">
-                <FlowvaLogo />
-                <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-500">
-                    <Link href="#" className="hover:text-black">Hub ▾</Link>
-                    <Link href="#" className="hover:text-black">Company ▾</Link>
-                    <Link href="#" className="hover:text-black">Support ▾</Link>
-                    <Link href="#" className="hover:text-black">Community ▾</Link>
-                </nav>
-            </div>
-            <div className="flex items-center space-x-2">
-                <Link href="/login">
-                  <Button variant="ghost" className="text-sm font-semibold px-4 py-2">Login</Button>
-                </Link>
-                <Link href="/login">
-                  <Button className="text-sm font-semibold bg-gray-900 text-white px-5 py-2 rounded-full hover:bg-gray-800">Sign up</Button>
-                </Link>
-            </div>
-        </header>
-
+const ForUsers = () => (
+    <>
         <main className="max-w-4xl mx-auto text-center mt-16 px-6">
-            <div className="inline-flex bg-gray-100 p-1 rounded-full mb-12">
-                <Button variant="secondary" className="bg-gray-800 text-white px-4 py-1.5 rounded-full text-xs font-medium flex items-center h-auto hover:bg-gray-700">
-                    <span className="mr-2">👥</span> For users
-                </Button>
-                <Button variant="ghost" className="text-gray-500 px-4 py-1.5 rounded-full text-xs font-medium flex items-center h-auto">
-                    <span className="mr-2">🏢</span> For brands
-                </Button>
-            </div>
-
             <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-10">
                 YOUR <span className="gradient-text px-2 border-2 border-purple-200 rounded-full">SMART</span> SPACE TO MANAGE YOUR DIGITAL LIFE AND BE REWARDED
             </h1>
@@ -206,6 +175,8 @@ export default function Home() {
         </div>
 
         <div className="max-w-4xl mx-auto px-6 space-y-12 mb-20">
+          <div className="max-w-4xl mx-auto px-6 space-y-20 mb-24">
+
             <section className="text-center">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 uppercase">Simple, Rewarding, Calm</h2>
                 
@@ -272,6 +243,7 @@ export default function Home() {
                     <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
                 </div>
             </section>
+
         </div>
         <div className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
 
@@ -322,78 +294,489 @@ export default function Home() {
                     </button>
                 </div>
             </section>
+        </div>
+    </>
+);
+
+const ForBrands = () => (
+    <>
+        <main className="max-w-6xl mx-auto text-center mt-16 px-6">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-12 max-w-5xl mx-auto uppercase">
+                CONNECT WITH <span className="gradient-text px-4 border-2 border-purple-200 rounded-full italic">TECH</span> PROFESSIONALS WHO ACTUALLY ENGAGE
+            </h1>
+
+            <button className="bg-gray-900 text-white px-10 py-4 rounded-full font-black text-sm shadow-2xl hover:scale-105 transition-all mb-20 uppercase tracking-widest">
+                Start Your 3-Day Free Trial
+            </button>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+                <div className="bg-white border border-gray-100 rounded-[40px] p-16 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
+                    <h2 className="text-[#00a870] text-6xl md:text-7xl font-bold tracking-tighter">Brevo</h2>
+                </div>
+                <div className="bg-[#ff6100] rounded-[40px] p-16 flex items-center justify-center shadow-lg hover:brightness-105 transition-all">
+                    <div className="flex items-center space-x-3">
+                       <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"/></svg>
+                       <h2 className="text-white text-5xl md:text-6xl font-bold tracking-tighter">Jotform</h2>
+                    </div>
+                </div>
+            </div>
+
+            <section className="mb-32">
+                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-4">Trusted by 20+ forward-thinking brands</p>
+                <p className="text-xs text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
+                    Join companies already reaching 10,000+ remote workers and freelancers actively discovering and organizing their digital tools.
+                </p>
+                
+                <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-60 grayscale">
+                    <div className="flex items-center space-x-2 font-bold text-sm"><span>⚡</span> Boltshift</div>
+                    <div className="flex items-center space-x-2 font-bold text-sm"><span>⚡</span> Boltshift</div>
+                    <div className="flex items-center space-x-2 font-bold text-sm"><span>◇</span> FeatherDev</div>
+                    <div className="flex items-center space-x-2 font-bold text-sm"><span>◯</span> Spherule</div>
+                    <div className="flex items-center space-x-2 font-bold text-sm"><span>🌍</span> GlobalBank</div>
+                    <div className="flex items-center space-x-2 font-bold text-sm italic"><span>☀</span> Nietzsche</div>
+                </div>
+            </section>
+
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight uppercase mb-20">
+                AMPLIFY YOUR BRAND'S SUCCESS
+            </h2>
+        </main>
+        <section className="max-w-4xl mx-auto px-6 py-20 text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight uppercase mb-16">
+                Amplify Your Brand's Success
+            </h2>
+
+            <div className="space-y-6 text-left">
+                <div className="bg-[#f3f0ff] rounded-[40px] p-8 md:p-12">
+                    <h3 className="text-2xl font-bold mb-4 max-w-sm">Engage an active community of tech savvy users</h3>
+                    <div className="flex justify-center my-10">
+                        <div className="relative w-48 h-32">
+                            <div className="absolute top-0 left-0 w-16 h-16 bg-purple-400 rounded-lg transform -rotate-12"></div>
+                            <div className="absolute top-4 right-0 w-16 h-16 bg-blue-400 rounded-lg transform rotate-12"></div>
+                            <div className="absolute bottom-0 left-8 w-16 h-16 bg-pink-400 rounded-lg transform rotate-6"></div>
+                            <div className="absolute bottom-2 right-8 w-16 h-16 bg-yellow-400 rounded-lg transform -rotate-6"></div>
+                        </div>
+                    </div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Thousands of engaged users explore and use tools on our platform everyday</p>
+                </div>
+
+                <div className="bg-[#f3f0ff] rounded-[40px] p-8 md:p-12">
+                    <h3 className="text-2xl font-bold mb-4 max-w-sm">Offer Exclusive Value</h3>
+                    <div className="flex justify-center space-x-6 my-10">
+                        <div className="text-5xl">🎟️</div>
+                        <div className="text-5xl">💵</div>
+                        <div className="text-5xl">💎</div>
+                    </div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Stand out with special discounts, cashback, or unique perks for our users</p>
+                </div>
+
+                <div className="bg-[#f3f0ff] rounded-[40px] p-8 md:p-12 overflow-hidden">
+                    <h3 className="text-2xl font-bold mb-4 max-w-sm">Boost Your Visibility</h3>
+                    
+                    <div className="bg-white rounded-2xl p-4 shadow-sm border border-purple-100 max-w-md mx-auto my-8 flex items-center space-x-4">
+                        <div className="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center font-bold text-xl">K</div>
+                        <div className="flex-1">
+                            <p className="text-[10px] text-gray-400 font-bold uppercase">Top Tool Spotlight</p>
+                            <h4 className="font-bold text-sm">Keeper Security</h4>
+                            <div className="flex items-center text-[10px] text-gray-500 space-x-2">
+                                <span>⭐ 4.6</span>
+                                <span>• 2.3k saves</span>
+                                <span className="bg-gray-100 px-2 py-0.5 rounded">Security</span>
+                            </div>
+                        </div>
+                        <div className="text-gray-300">↗</div>
+                    </div>
+
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Get featured across our Homepage, Discover section, Rewards Hub, Library, Newsletter, and Blog</p>
+                </div>
+            </div>
+        </section>
+        <div className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
+
+            <section className="bg-black rounded-[40px] p-8 md:p-12 text-white relative overflow-hidden">
+                <div className="relative z-10">
+                    <h3 className="text-2xl font-bold mb-4">Measure Your Impact</h3>
+                    <p className="text-sm text-gray-400 mb-12 max-w-sm">
+                        Track how many users unlock, engage with, and activate your offer.
+                    </p>
+                    
+                    <div className="flex flex-col md:flex-row items-end justify-between gap-8">
+                        <div>
+                            <h4 className="text-5xl md:text-6xl font-black tracking-tighter">30,000+</h4>
+                            <p className="text-xs font-bold text-gray-500 uppercase mt-2">Tools Added to Libraries</p>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <div className="w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-3xl rotate-12 flex items-center justify-center text-4xl shadow-[0_0_30px_rgba(251,191,36,0.3)]">
+                                ⭐
+                            </div>
+                            <div className="h-16 w-16 flex items-end space-x-1">
+                                <div className="w-3 h-1/2 bg-blue-500 rounded-t-sm"></div>
+                                <div className="w-3 h-3/4 bg-blue-400 rounded-t-sm"></div>
+                                <div className="w-3 h-full bg-blue-300 rounded-t-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="text-center">
+                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight uppercase mb-16">
+                    Why Subscribe to Flowva?
+                </h2>
+
+                <div className="space-y-4 text-left">
+                    <div className="bg-[#d946ef] text-white p-8 rounded-3xl">
+                        <div className="flex items-center space-x-3 mb-3">
+                            <span className="bg-white/20 p-2 rounded-lg text-lg">🛡️</span>
+                            <h4 className="text-xl font-bold">Verified engagement</h4>
+                        </div>
+                        <p className="text-xs font-medium leading-relaxed opacity-90">
+                            Reach active tech-savvy professionals who manage their tool libraries and actually try new tools, all included with your subscription.
+                        </p>
+                    </div>
+
+                    <div className="bg-[#ec4899] text-white p-8 rounded-3xl">
+                        <div className="flex items-center space-x-3 mb-3">
+                            <span className="bg-white/20 p-2 rounded-lg text-lg">🎁</span>
+                            <h4 className="text-xl font-bold">Reward-Driven Growth</h4>
+                        </div>
+                        <p className="text-xs font-medium leading-relaxed opacity-90">
+                            Incentivize users automatically with Flowva's built-in rewards system — no extra fees, fully handled by the platform.
+                        </p>
+                    </div>
+
+                    <div className="bg-[#f97316] text-white p-8 rounded-3xl">
+                        <div className="flex items-center space-x-3 mb-3">
+                            <span className="bg-white/20 p-2 rounded-lg text-lg">⚡</span>
+                            <h4 className="text-xl font-bold">Full Self-Serve Freedom</h4>
+                        </div>
+                        <p className="text-xs font-medium leading-relaxed opacity-90">
+                            Launch and manage campaigns anytime with an intuitive dashboard. Target your campaigns, schedule actions, and track engagement with complete control.
+                        </p>
+                    </div>
+
+                    <div className="bg-[#3b82f6] text-white p-8 rounded-3xl">
+                        <div className="flex items-center space-x-3 mb-3">
+                            <span className="bg-white/20 p-2 rounded-lg text-lg">💎</span>
+                            <h4 className="text-xl font-bold">Optional Premium Support</h4>
+                        </div>
+                        <p className="text-xs font-medium leading-relaxed opacity-90">
+                            For top-tier brands or high-impact campaigns, our team can manage your campaigns, optimize engagement, and provide advanced analytics.
+                        </p>
+                    </div>
+
+                    <div className="bg-[#db2777] text-white p-8 rounded-3xl">
+                        <div className="flex items-center space-x-3 mb-3">
+                            <span className="bg-white/20 p-2 rounded-lg text-lg">🔒</span>
+                            <h4 className="text-xl font-bold">Exclusive Access</h4>
+                        </div>
+                        <p className="text-xs font-medium leading-relaxed opacity-90">
+                            Your subscription unlocks Flowva's curated audience. Our users are verified, engaged, and relevant. Limited campaign slots maintain visibility and exclusivity.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
         </div>
+        <section className="max-w-4xl mx-auto px-6 py-20 text-center">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight uppercase mb-12">
+                How It Works
+            </h2>
 
-        <footer className="bg-black text-white pt-20 pb-10 px-6">
-            <div className="max-w-6xl mx-auto">
-                <div className="bg-[#1a1a1a] rounded-[32px] p-8 mb-20 text-center max-w-2xl mx-auto">
-                    <div className="mb-6 flex justify-center">
-                        <div className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center text-xl">👓</div>
+            <div className="space-y-6">
+                <div className="bg-[#f97316] text-white rounded-[40px] p-10 md:p-14 text-left relative overflow-hidden group">
+                    <span className="bg-white/20 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block">Step 1</span>
+                    <h3 className="text-3xl md:text-4xl font-black mb-4">Subscribe.</h3>
+                    <p className="text-sm font-medium opacity-90 max-w-xs mb-10">Choose the plan that fits your feature goals.</p>
+                    
+                    <div className="flex justify-center mt-4">
+                        <div className="relative bg-white text-[#f97316] px-8 py-3 rounded-full font-black text-xl shadow-2xl transform group-hover:scale-110 transition-transform cursor-default">
+                            Subscribe
+                            <div className="absolute -top-4 -left-6 bg-red-500 text-white text-[10px] p-1 rounded-md">❤️ 123</div>
+                            <div className="absolute -bottom-2 -right-4 bg-red-400 text-white text-[10px] p-1 rounded-md">💬 1</div>
+                        </div>
                     </div>
-                    <div className="relative max-w-md mx-auto">
-                        <input type="email" placeholder="Enter email address" className="w-full bg-[#2a2a2a] rounded-full py-4 px-6 text-sm border-none focus:ring-1 focus:ring-gray-500 outline-none" />
-                        <button className="absolute right-2 top-2 bg-white text-black px-6 py-2 rounded-full text-xs font-bold flex items-center">
-                            Submit <span className="ml-2">→</span>
+                </div>
+
+                <div className="bg-[#a855f7] text-white rounded-[40px] p-10 md:p-14 text-left relative overflow-hidden group">
+                    <span className="bg-white/20 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block">Step 2</span>
+                    <h3 className="text-3xl md:text-4xl font-black mb-4">Launch Features</h3>
+                    <p className="text-sm font-medium opacity-90 max-w-sm mb-10">Set up actions, schedule them, and reach techies, freelancers, and remote workers where they work.</p>
+                    
+                    <div className="flex justify-center mt-4">
+                        <div className="text-7xl animate-bounce">🚀</div>
+                    </div>
+                </div>
+
+                <div className="bg-[#f43f5e] text-white rounded-[40px] p-10 md:p-14 text-left relative overflow-hidden group">
+                    <span className="bg-white/20 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block">Step 3</span>
+                    <h3 className="text-3xl md:text-4xl font-black mb-4">Engage Users</h3>
+                    <p className="text-sm font-medium opacity-90 max-w-xs mb-10">Offer perks and rewards that drive deeper participation.</p>
+                    
+                    <div className="flex justify-center mt-4">
+                        <div className="text-7xl transform -rotate-12 group-hover:rotate-0 transition-transform">📢</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
+
+            <div className="space-y-6">
+                <div className="bg-[#15803d] text-white rounded-[40px] p-10 md:p-14 text-left relative overflow-hidden group">
+                    <span className="bg-white/20 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block">Step 4</span>
+                    <h3 className="text-3xl md:text-4xl font-black mb-4">Track Results</h3>
+                    <p className="text-sm font-medium opacity-90 max-w-xs mb-10">Monitor feature performance in real time with actionable analytics.</p>
+                    
+                    <div className="flex justify-center mt-4">
+                        <div className="relative w-40 h-40">
+                            <div className="absolute inset-0 rounded-full border-[20px] border-blue-400 border-r-purple-500 border-b-orange-400 group-hover:rotate-45 transition-transform duration-500"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="bg-[#0f766e] text-white rounded-[40px] p-10 md:p-14 text-left relative overflow-hidden group">
+                    <span className="bg-white/20 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block">Step 5</span>
+                    <h3 className="text-3xl md:text-4xl font-black mb-4 leading-tight">Optional Premium Support</h3>
+                    <p className="text-sm font-medium opacity-90 max-w-sm mb-10">Optional Premium Support – Let the Flowva team run your features for maximum impact.</p>
+                    
+                    <div className="flex justify-center mt-4">
+                        <div className="text-7xl drop-shadow-2xl group-hover:scale-110 transition-transform">👑</div>
+                    </div>
+                </div>
+            </div>
+
+            <section className="text-center">
+                <div className="flex justify-center space-x-[-8px] mb-4">
+                    <div className="w-8 h-8 rounded-full border-2 border-white bg-purple-100 flex items-center justify-center text-sm shadow-sm">💜</div>
+                    <div className="w-8 h-8 rounded-full border-2 border-white bg-purple-600 flex items-center justify-center text-sm shadow-sm">💜</div>
+                </div>
+                
+                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight uppercase mb-2">Success Stories</h2>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-12">Tools That Found Their Audience with Flowva</p>
+
+                <div className="flex flex-col md:flex-row gap-6">
+                    <div className="bg-[#6dd5ff] p-8 rounded-[24px] text-left flex-1 shadow-lg flex flex-col justify-between min-h-[220px]">
+                        <p className="text-[15px] font-bold leading-relaxed text-gray-900">
+                            "Flowva gave us a new channel of discovery. Users were genuinely interested and engagement was higher than on ads."
+                        </p>
+                        <div className="flex items-center space-x-2 mt-6">
+                            <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center text-[10px]">⚡</div>
+                            <span className="text-[11px] font-black uppercase tracking-wider text-gray-800">@ProductivityApp</span>
+                        </div>
+                    </div>
+
+                    <div className="bg-[#c2ff3d] p-8 rounded-[24px] text-left flex-1 shadow-lg flex flex-col justify-between min-h-[220px]">
+                        <p className="text-[15px] font-bold leading-relaxed text-gray-900">
+                            "Seamless and simple our sign-ups grew with no extra work on our end."
+                        </p>
+                        <div className="flex items-center space-x-2 mt-6">
+                            <div className="w-6 h-6 bg-gray-800 rounded flex items-center justify-center text-[10px] text-white">📦</div>
+                            <span className="text-[11px] font-black uppercase tracking-wider text-gray-800">@Devtoolkit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex justify-center space-x-2 mt-10">
+                    <span className="w-1.5 h-1.5 bg-gray-800 rounded-full"></span>
+                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
+                </div>
+            </section>
+
+        </div>
+        <div className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
+
+            <section className="text-center">
+                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-12 uppercase">Need Answers?</h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">What is Flowva and who are your users?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+                    
+                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">How does the subscription work?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+
+                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">Can I run multiple features at once?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+
+                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">How are users rewarded?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+
+                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">Can I target specific types of users?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+
+                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">What is optional premium support?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+
+                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">What happens when Early-Bird pricing ends?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+
+                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">Can I switch plans anytime?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-[#1d4ed8] rounded-[40px] p-12 text-center text-white relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 uppercase">
+                        Start Your Campaign
+                    </h2>
+                    
+                    <div class="flex justify-center mb-10">
+                        <div class="relative w-48 h-32 flex items-center justify-center">
+                            <span class="text-7xl">🤝</span>
+                        </div>
+                    </div>
+
+                    <p class="text-xs font-medium max-w-sm mx-auto mb-10 leading-relaxed opacity-90">
+                        Flowva works with brands to give our users exclusive discounts, cashback, and perks.
+                    </p>
+                    
+                    <button class="bg-black text-white px-10 py-3.5 rounded-full text-xs font-bold hover:scale-105 transition-transform shadow-2xl">
+                        Claim Your Spot
+                    </button>
+                </div>
+                
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-500/20 blur-[100px]"></div>
+            </section>
+
+        </div>
+    </>
+);
+
+export default function Home() {
+  const [activeTab, setActiveTab] = useState('users');
+
+  return (
+    <div class="bg-white text-gray-900">
+        <div class="bg-black text-white text-xs py-2 text-center px-4">
+            🚀 Big news! The full Flowva experience + mobile apps are launching soon on iOS & Android
+        </div>
+
+        <header class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center space-x-8">
+                <FlowvaLogo />
+                <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-500">
+                    <a href="#" class="hover:text-black">Hub ▾</a>
+                    <a href="#" class="hover:text-black">Company ▾</a>
+                    <a href="#" class="hover:text-black">Support ▾</a>
+                    <a href="#" class="hover:text-black">Community ▾</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-2">
+                <Link href="/login">
+                  <Button variant="ghost" class="text-sm font-semibold px-4 py-2">Login</Button>
+                </Link>
+                <Link href="/login">
+                  <Button class="text-sm font-semibold bg-gray-900 text-white px-5 py-2 rounded-full hover:bg-gray-800">Sign up</Button>
+                </Link>
+            </div>
+        </header>
+
+        <main class="max-w-4xl mx-auto text-center mt-16 px-6">
+            <div class="inline-flex bg-gray-100 p-1 rounded-full mb-12">
+                <Button 
+                    variant={activeTab === 'users' ? 'secondary' : 'ghost'} 
+                    onClick={() => setActiveTab('users')}
+                    className={`${activeTab === 'users' ? 'bg-gray-800 text-white' : 'text-gray-500'} px-4 py-1.5 rounded-full text-xs font-medium flex items-center h-auto`}>
+                    <span class="mr-2">👥</span> For users
+                </Button>
+                <Button 
+                    variant={activeTab === 'brands' ? 'secondary' : 'ghost'}
+                    onClick={() => setActiveTab('brands')}
+                    className={`${activeTab === 'brands' ? 'bg-gray-800 text-white' : 'text-gray-500'} px-4 py-1.5 rounded-full text-xs font-medium flex items-center h-auto`}>
+                    <span class="mr-2">🏢</span> For brands
+                </Button>
+            </div>
+        </main>
+
+        {activeTab === 'users' && <ForUsers />}
+        {activeTab === 'brands' && <ForBrands />}
+        
+        <footer class="bg-black text-white pt-20 pb-10 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-[#1a1a1a] rounded-[32px] p-8 mb-20 text-center max-w-2xl mx-auto">
+                    <div class="mb-6 flex justify-center">
+                        <div class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center text-xl">👓</div>
+                    </div>
+                    <div class="relative max-w-md mx-auto">
+                        <input type="email" placeholder="Enter email address" class="w-full bg-[#2a2a2a] rounded-full py-4 px-6 text-sm border-none focus:ring-1 focus:ring-gray-500 outline-none" />
+                        <button class="absolute right-2 top-2 bg-white text-black px-6 py-2 rounded-full text-xs font-bold flex items-center">
+                            Submit <span class="ml-2">→</span>
                         </button>
                     </div>
-                    <p className="text-[10px] text-gray-500 mt-4">10,000+ end their week inspired. Join Friday Flow.</p>
+                    <p class="text-[10px] text-gray-500 mt-4">10,000+ end their week inspired. Join Friday Flow.</p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20 border-t border-gray-800 pt-16">
-                    <div className="col-span-2 md:col-span-1">
-                        <div className="flex items-center space-x-2 font-bold text-lg mb-4">
-                            <span className="text-white">👓</span><span>Flowva</span>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20 border-t border-gray-800 pt-16">
+                    <div class="col-span-2 md:col-span-1">
+                        <div class="flex items-center space-x-2 font-bold text-lg mb-4">
+                            <span class="text-white">👓</span><span>Flowva</span>
                         </div>
-                        <p className="text-xs text-gray-500 leading-relaxed max-w-[200px]">
+                        <p class="text-xs text-gray-500 leading-relaxed max-w-[200px]">
                             The smart way to manage your digital life and get rewarded.
                         </p>
-                        <p className="text-[10px] text-gray-600 mt-8">© 2025 Flowva</p>
+                        <p class="text-[10px] text-gray-600 mt-8">© 2025 Flowva</p>
                     </div>
 
-                    <div className="space-y-4">
-                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Hub</h4>
-                        <ul className="text-xs space-y-3 text-gray-500 font-medium">
-                            <li><a href="#" className="hover:text-white transition-colors">Discover</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Library</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Rewards</a></li>
-                        </ul>
-                    </div>
-
-                    <div className="space-y-4">
-                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Company</h4>
-                        <ul className="text-xs space-y-3 text-gray-500 font-medium">
-                            <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                        </ul>
-                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-8">Legal</h4>
-                        <ul className="text-xs space-y-3 text-gray-500 font-medium">
-                            <li><a href="#" className="hover:text-white transition-colors">Terms and Conditions</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Hub</h4>
+                        <ul class="text-xs space-y-3 text-gray-500 font-medium">
+                            <li><a href="#" class="hover:text-white transition-colors">Discover</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Library</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Rewards</a></li>
                         </ul>
                     </div>
 
-                    <div className="space-y-4">
-                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Support</h4>
-                        <ul className="text-xs space-y-3 text-gray-500 font-medium">
-                            <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Company</h4>
+                        <ul class="text-xs space-y-3 text-gray-500 font-medium">
+                            <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
                         </ul>
-                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-8">Community</h4>
-                        <ul className="text-xs space-y-3 text-gray-500 font-medium">
-                            <li><a href="#" className="hover:text-white transition-colors">Affiliate</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Influencer</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Referral</a></li>
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mt-8">Legal</h4>
+                        <ul class="text-xs space-y-3 text-gray-500 font-medium">
+                            <li><a href="#" class="hover:text-white transition-colors">Terms and Conditions</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Support</h4>
+                        <ul class="text-xs space-y-3 text-gray-500 font-medium">
+                            <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        </ul>
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mt-8">Community</h4>
+                        <ul class="text-xs space-y-3 text-gray-500 font-medium">
+                            <li><a href="#" class="hover:text-white transition-colors">Affiliate</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Influencer</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Referral</a></li>
                         </ul>
                     </div>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-6 border-t border-gray-800 pt-8 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-                    <a href="#" className="flex items-center hover:text-white"><span className="mr-2">f</span> Facebook</a>
-                    <a href="#" className="flex items-center hover:text-white"><span className="mr-2">𝕏</span> X (Formerly Twitter)</a>
-                    <a href="#" className="flex items-center hover:text-white"><span className="mr-2"></span> Instagram</a>
-                    <a href="#" className="flex items-center hover:text-white"><span className="mr-2"></span> Linkedin</a>
-                    <a href="#" className="flex items-center hover:text-white"><span className="mr-2"></span> Tiktok</a>
+                <div class="flex flex-wrap justify-center gap-6 border-t border-gray-800 pt-8 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                    <a href="#" class="flex items-center hover:text-white"><span class="mr-2">f</span> Facebook</a>
+                    <a href="#" class="flex items-center hover:text-white"><span class="mr-2">𝕏</span> X (Formerly Twitter)</a>
+                    <a href="#" class="flex items-center hover:text-white"><span class="mr-2"></span> Instagram</a>
+                    <a href="#" class="flex items-center hover:text-white"><span class="mr-2"></span> Linkedin</a>
+                    <a href="#" class="flex items-center hover:text-white"><span class="mr-2"></span> Tiktok</a>
                 </div>
             </div>
         </footer>
