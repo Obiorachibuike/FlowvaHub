@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Logo } from '@/components/icons/Logo';
-import { ChevronDown, Users, Globe, Briefcase } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 
 const iconUrl = (name: string) => `https://img.icons8.com/fluency/48/000000/${name}.png`;
@@ -79,14 +79,16 @@ export default function Home() {
               SPACE TO MANAGE YOUR DIGITAL LIFE AND BE REWARDED
             </h1>
             
-            <Button size="lg" className="rounded-full">
-              Start Earning Today
-            </Button>
+            <Link href="/login">
+              <Button size="lg" className="rounded-full">
+                Start Earning Today
+              </Button>
+            </Link>
           </section>
 
           <section className="mt-16">
              <div className="flex justify-center">
-                 <div className="grid grid-cols-4 gap-4 sm:grid-cols-6 sm:gap-6">
+                 <div className="grid grid-cols-3 gap-4 sm:grid-cols-6 sm:gap-6">
                     {tools.map((tool) => (
                         <div key={tool.name} className="flex items-center justify-center">
                             <Image src={iconUrl(tool.icon)} alt={tool.name} width={64} height={64} className="h-16 w-16 rounded-2xl bg-white p-2 shadow-sm" />
