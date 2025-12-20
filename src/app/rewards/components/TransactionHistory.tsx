@@ -20,7 +20,7 @@ import {
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useSupabaseUser } from '@/contexts/Provider';
+import { useSupabaseUser } from '@/contexts/SupabaseProvider';
 
 type Transaction = {
   id: number;
