@@ -203,10 +203,200 @@ export default function Home() {
                     <div className="bg-gray-800 rounded-2xl h-48 flex items-center justify-center text-2xl">🪙</div>
                 </div>
             </section>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 space-y-12 mb-20">
+            <section className="text-center">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 uppercase">Simple, Rewarding, Calm</h2>
+                
+                <div className="grid md:grid-cols-3 gap-4">
+                    <div className="bg-[#e9d5ff] p-8 rounded-[32px] text-left flex flex-col min-h-[320px]">
+                        <span className="text-7xl font-light mb-6">1</span>
+                        <h3 className="text-2xl font-bold mb-3">Sign up & Connect</h3>
+                        <p className="text-sm text-gray-700 leading-relaxed">Set up your workspace in minutes</p>
+                    </div>
+
+                    <div className="bg-[#e9d5ff] p-8 rounded-[32px] text-left flex flex-col min-h-[320px]">
+                        <span className="text-7xl font-light mb-6">2</span>
+                        <h3 className="text-2xl font-bold mb-3">Organize & Track</h3>
+                        <p className="text-sm text-gray-700 leading-relaxed">Add your tools, subscriptions, and stacks.</p>
+                    </div>
+
+                    <div className="bg-[#e9d5ff] p-8 rounded-[32px] text-left flex flex-col min-h-[320px]">
+                        <span className="text-7xl font-light mb-6">3</span>
+                        <h3 className="text-2xl font-bold mb-3 leading-tight">Earn & Enjoy</h3>
+                        <p className="text-sm text-gray-700 leading-relaxed">Check in, try new tools, and watch as your coins grow.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="text-center">
+                <div className="flex justify-center space-x-[-10px] mb-6">
+                    <div className="w-8 h-8 rounded-full border-2 border-white bg-white flex items-center justify-center text-purple-600 shadow-sm">💜</div>
+                    <div className="w-8 h-8 rounded-full border-2 border-white bg-purple-600 flex items-center justify-center text-white shadow-sm">💜</div>
+                </div>
+                
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 uppercase">Join a Growing Community</h2>
+
+                <div className="flex flex-col md:flex-row gap-6 items-stretch">
+                    <div className="bg-[#6dd5ff] p-8 rounded-[20px] text-left flex-1 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <p className="text-[15px] font-medium leading-relaxed mb-6">
+                                Flowvahub makes finding tools effortless. Instead of wasting hours jumping between sites, I just open Discover Tools everything's clear, organized, and right there. Feels less like searching, more like unlocking possibilities. ☕️ 💜
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex text-black text-sm mb-1">★★★★★</div>
+                            <p className="font-bold text-sm">Ummaratu M.</p>
+                            <p className="text-[11px] opacity-80 uppercase tracking-wider">Freelancer & Virtual Assistant</p>
+                        </div>
+                    </div>
+
+                    <div className="bg-[#faff6d] p-8 rounded-[20px] text-left flex-1 flex flex-col justify-between shadow-lg">
+                        <div>
+                            <p className="text-[15px] font-medium leading-relaxed mb-6">
+                                Flowvahub is my new sidekick. It keeps my apps in line, my subs in check, and still finds a way to pay me in rewards. If it could make coffee, I'd marry it
+                            </p>
+                        </div>
+                        <div>
+                            <div className="flex text-black text-sm mb-1">★★★★★</div>
+                            <p className="font-bold text-sm">Adewale O.</p>
+                            <p className="text-[11px] opacity-80 uppercase tracking-wider">Freelancer & Digital Creator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex justify-center space-x-2 mt-12">
+                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
+                    <span className="w-2 h-2 bg-gray-800 rounded-full"></span>
+                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
+                </div>
+            </section>
+        </div>
+        <div className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
+
+            <section className="text-center">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 uppercase">Need Answers?</h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="bg-gray-50 p-5 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-md transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">What is Flowvahub?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+                    <div className="bg-gray-50 p-5 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-md transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">Is my data secure with Flowva?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+                    <div className="bg-gray-50 p-5 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-md transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">How does team collaboration work?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+                    <div className="bg-gray-50 p-5 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-md transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">How do Smart Tool Recommendations work?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+                    <div className="bg-gray-50 p-5 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-md transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">Can I cancel my subscription anytime?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+                    <div className="bg-gray-50 p-5 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-md transition-all">
+                        <span className="text-sm font-bold text-gray-800 text-left">Can I manage all my subscriptions in one place?</span>
+                        <span className="text-[10px] text-gray-400">▶</span>
+                    </div>
+                </div>
+            </section>
+
+            <section className="bg-[#e2ff46] rounded-[40px] p-12 text-center relative overflow-hidden">
+                <div className="absolute top-4 left-4 w-16 h-16 coin-gradient rounded-full border-4 border-white/30 flex items-center justify-center text-[10px] font-bold opacity-80">50</div>
+                <div className="absolute bottom-8 right-4 w-20 h-20 coin-gradient rounded-full border-4 border-white/30 flex items-center justify-center text-[12px] font-bold opacity-80 rotate-12">50</div>
+                
+                <div className="relative z-10">
+                    <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter mb-6 leading-[1.1]">
+                        STAY PRODUCTIVE.<br/>GET REWARDED.
+                    </h2>
+                    <p className="text-sm font-bold max-w-sm mx-auto mb-8 leading-relaxed text-gray-900">
+                        Turn your tools, subscriptions, and daily habits into rewards all in one calm space
+                    </p>
+                    <button className="bg-black text-white px-10 py-4 rounded-full text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform">
+                        Unlock Rewards Now
+                    </button>
+                </div>
+            </section>
 
         </div>
-        
-        {/* The WhatsApp floating button is not included as it's typically handled by a third-party script or a more complex component. */}
+
+        <footer className="bg-black text-white pt-20 pb-10 px-6">
+            <div className="max-w-6xl mx-auto">
+                <div className="bg-[#1a1a1a] rounded-[32px] p-8 mb-20 text-center max-w-2xl mx-auto">
+                    <div className="mb-6 flex justify-center">
+                        <div className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center text-xl">👓</div>
+                    </div>
+                    <div className="relative max-w-md mx-auto">
+                        <input type="email" placeholder="Enter email address" className="w-full bg-[#2a2a2a] rounded-full py-4 px-6 text-sm border-none focus:ring-1 focus:ring-gray-500 outline-none" />
+                        <button className="absolute right-2 top-2 bg-white text-black px-6 py-2 rounded-full text-xs font-bold flex items-center">
+                            Submit <span className="ml-2">→</span>
+                        </button>
+                    </div>
+                    <p className="text-[10px] text-gray-500 mt-4">10,000+ end their week inspired. Join Friday Flow.</p>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20 border-t border-gray-800 pt-16">
+                    <div className="col-span-2 md:col-span-1">
+                        <div className="flex items-center space-x-2 font-bold text-lg mb-4">
+                            <span className="text-white">👓</span><span>Flowva</span>
+                        </div>
+                        <p className="text-xs text-gray-500 leading-relaxed max-w-[200px]">
+                            The smart way to manage your digital life and get rewarded.
+                        </p>
+                        <p className="text-[10px] text-gray-600 mt-8">© 2025 Flowva</p>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Hub</h4>
+                        <ul className="text-xs space-y-3 text-gray-500 font-medium">
+                            <li><a href="#" className="hover:text-white transition-colors">Discover</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Library</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Rewards</a></li>
+                        </ul>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Company</h4>
+                        <ul className="text-xs space-y-3 text-gray-500 font-medium">
+                            <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                        </ul>
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-8">Legal</h4>
+                        <ul className="text-xs space-y-3 text-gray-500 font-medium">
+                            <li><a href="#" className="hover:text-white transition-colors">Terms and Conditions</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Support</h4>
+                        <ul className="text-xs space-y-3 text-gray-500 font-medium">
+                            <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+                        </ul>
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-8">Community</h4>
+                        <ul className="text-xs space-y-3 text-gray-500 font-medium">
+                            <li><a href="#" className="hover:text-white transition-colors">Affiliate</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Influencer</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Referral</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-6 border-t border-gray-800 pt-8 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                    <a href="#" className="flex items-center hover:text-white"><span className="mr-2">f</span> Facebook</a>
+                    <a href="#" className="flex items-center hover:text-white"><span className="mr-2">𝕏</span> X (Formerly Twitter)</a>
+                    <a href="#" className="flex items-center hover:text-white"><span className="mr-2"></span> Instagram</a>
+                    <a href="#" className="flex items-center hover:text-white"><span className="mr-2"></span> Linkedin</a>
+                    <a href="#" className="flex items-center hover:text-white"><span className="mr-2"></span> Tiktok</a>
+                </div>
+            </div>
+        </footer>
     </div>
   );
 }
