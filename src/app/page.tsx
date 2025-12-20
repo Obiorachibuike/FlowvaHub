@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { MoveRight } from 'lucide-react';
 
 // Using a simple SVG for the logo as per the design
 const FlowvaLogo = () => (
@@ -35,10 +34,10 @@ export default function Home() {
             </div>
             <div className="flex items-center space-x-2">
                 <Link href="/login">
-                  <Button variant="ghost" className="font-semibold">Login</Button>
+                  <Button variant="ghost" className="text-sm font-semibold px-4 py-2">Login</Button>
                 </Link>
                 <Link href="/login">
-                  <Button className="font-semibold bg-gray-900 text-white rounded-full hover:bg-gray-800">Sign up</Button>
+                  <Button className="text-sm font-semibold bg-gray-900 text-white px-5 py-2 rounded-full hover:bg-gray-800">Sign up</Button>
                 </Link>
             </div>
         </header>
@@ -119,6 +118,93 @@ export default function Home() {
                 </Card>
             </div>
         </main>
+        
+        <div className="max-w-4xl mx-auto px-6 space-y-12 mb-20 text-left">
+            <section className="bg-[#f3e8ff] rounded-[40px] p-8 md:p-12 text-center overflow-hidden relative">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12">EVERYTHING IN ONE PLACE</h2>
+                
+                <div className="relative flex justify-center items-end h-64">
+                    <div className="absolute -left-10 bottom-0 w-48 h-56 bg-white/50 rounded-2xl shadow-sm transform -rotate-6"></div>
+                    
+                    <div className="bg-white rounded-3xl shadow-xl p-6 w-full max-w-md z-10 text-left">
+                        <div className="grid grid-cols-5 gap-3 mb-6">
+                            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">🎁</div>
+                            <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">🛠️</div>
+                            <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">💵</div>
+                            <div className="w-10 h-10 coin-gradient rounded-full"></div>
+                            <div className="w-10 h-10 bg-blue-500 rounded-lg"></div>
+                        </div>
+                        <h4 className="font-bold text-sm mb-1">Get Rewarded</h4>
+                        <p className="text-[10px] text-gray-500 leading-tight">Earn perks, gift cards and cashback just for staying productive.</p>
+                    </div>
+                </div>
+                
+                <div className="flex justify-center space-x-2 mt-8">
+                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
+                    <span className="w-2 h-2 bg-gray-800 rounded-full"></span>
+                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
+                </div>
+            </section>
+
+            <section className="bg-[#fff1f2] rounded-[40px] p-8 md:p-12">
+                <span className="bg-gray-200/50 text-[10px] px-3 py-1 rounded-full font-bold text-gray-600 uppercase">Download</span>
+                <h2 className="text-2xl md:text-3xl font-bold mt-6 mb-8 max-w-md leading-tight">ORGANIZE, DISCOVER, AND EARN ON THE GO.</h2>
+                
+                <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-6 flex flex-col md:flex-row items-center gap-6 border border-white">
+                    <div className="flex flex-col space-y-3 w-full md:w-auto">
+                        <button className="flex items-center space-x-3 bg-gray-100/80 px-4 py-2 rounded-xl text-xs font-semibold hover:bg-white transition-colors">
+                            <span className="text-blue-500 text-lg"></span>
+                            <span>Apple App Store</span>
+                        </button>
+                        <button className="flex items-center space-x-3 bg-gray-100/80 px-4 py-2 rounded-xl text-xs font-semibold hover:bg-white transition-colors">
+                            <span className="text-green-600 text-lg">▶</span>
+                            <span>Google Play Store</span>
+                        </button>
+                    </div>
+                    <div className="w-24 h-24 bg-white p-2 rounded-xl border border-gray-100 shadow-sm flex items-center justify-center">
+                       <div className="grid grid-cols-3 gap-1 opacity-20">
+                           <div className="w-4 h-4 bg-black"></div><div className="w-4 h-4 bg-black"></div><div className="w-4 h-4 bg-black"></div>
+                           <div className="w-4 h-4 bg-black"></div><div className="w-4 h-4 bg-black"></div><div className="w-4 h-4 bg-black"></div>
+                       </div>
+                    </div>
+                </div>
+
+                <div className="mt-6 bg-white/40 py-3 px-6 rounded-full inline-flex items-center space-x-2 text-sm text-gray-600">
+                    <span>⏳</span>
+                    <span className="font-medium">Coming soon</span>
+                </div>
+            </section>
+
+            <section className="bg-[#111111] rounded-[40px] p-8 md:p-12 text-white">
+                <span className="bg-gray-800 text-[10px] px-3 py-1 rounded-full font-bold text-gray-400 uppercase">Benefits</span>
+                
+                <ul className="mt-8 space-y-4 mb-12">
+                    <li className="flex items-center space-x-3 text-lg font-bold">
+                        <span className="w-2 h-2 bg-white rounded-full"></span>
+                        <span>QUICK DAILY CHECK-INS</span>
+                    </li>
+                    <li className="flex items-center space-x-3 text-lg font-bold text-gray-500">
+                        <span className="w-2 h-2 bg-gray-700 rounded-full"></span>
+                        <span>DISCOVER TOOLS ANYWHERE</span>
+                    </li>
+                    <li className="flex items-center space-x-3 text-lg font-bold text-gray-500">
+                        <span className="w-2 h-2 bg-gray-700 rounded-full"></span>
+                        <span>NEVER MISS A REWARD</span>
+                    </li>
+                </ul>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 overflow-hidden">
+                    <div className="bg-white rounded-2xl h-48 p-4 flex flex-col justify-between overflow-hidden">
+                        <div className="text-black text-[10px] font-bold border-b pb-2">How's your moment?</div>
+                        <div className="flex-1 bg-purple-50 my-2 rounded-lg"></div>
+                        <button className="bg-black text-white text-[8px] py-2 rounded-lg">Check in</button>
+                    </div>
+                    <div className="bg-gray-800 rounded-2xl h-48 flex items-center justify-center text-2xl">🧭</div>
+                    <div className="bg-gray-800 rounded-2xl h-48 flex items-center justify-center text-2xl">🪙</div>
+                </div>
+            </section>
+
+        </div>
         
         {/* The WhatsApp floating button is not included as it's typically handled by a third-party script or a more complex component. */}
     </div>
