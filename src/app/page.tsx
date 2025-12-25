@@ -592,8 +592,8 @@ export default function LandingPage() {
                     </nav>
                 </div>
                 <div className="flex items-center space-x-4">
-                    <button className="text-sm font-semibold px-4 py-2">Login</button>
-                    <button className="text-sm font-semibold bg-gray-900 text-white px-5 py-2 rounded-full">Sign up</button>
+                    <Link href="/login" className="text-sm font-semibold px-4 py-2">Login</Link>
+                    <Link href="/signup" className="text-sm font-semibold bg-gray-900 text-white px-5 py-2 rounded-full">Sign up</Link>
                 </div>
             </header>
 
@@ -692,5 +692,3 @@ export default function LandingPage() {
         </div>
     );
 }
-
-    
