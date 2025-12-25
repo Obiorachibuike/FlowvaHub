@@ -1,3 +1,4 @@
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -16,12 +17,12 @@ const logos = [
 const Marquee = ({ children, direction = 'left' }: { children: React.ReactNode, direction?: 'left' | 'right' }) => {
     const marqueeVariants = {
         animate: {
-            x: direction === 'left' ? ['0%', '-100%'] : ['-100%', '0%'],
+            x: direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%'],
             transition: {
                 x: {
                     repeat: Infinity,
                     repeatType: 'loop',
-                    duration: 20,
+                    duration: 40,
                     ease: 'linear',
                 },
             },
@@ -58,19 +59,11 @@ export function ScrollingLogos() {
         </Marquee>
         <Marquee direction="left">
             <div className="flex gap-8 px-4">
-                {[...logos].reverse().map((logo, index) => (
+                {[...logos, ...logos].map((logo, index) => (
                     <div key={`bottom-${index}`} className="flex items-center justify-center h-20 w-40 bg-gray-100 rounded-2xl shadow-sm">
                         <div className="flex items-center gap-3 text-gray-600 font-bold">
-                            {logo.icon}
-                            <span>{logo.name}</span>
-                        </div>
-                    </div>
-                ))}
-                 {[...logos].reverse().map((logo, index) => (
-                    <div key={`bottom-clone-${index}`} className="flex items-center justify-center h-20 w-40 bg-gray-100 rounded-2xl shadow-sm">
-                        <div className="flex items-center gap-3 text-gray-600 font-bold">
-                            {logo.icon}
-                            <span>{logo.name}</span>
+                            {logos[logos.length - 1 - (index % logos.length)].icon}
+                            <span>{logos[logos.length - 1 - (index % logos.length)].name}</span>
                         </div>
                     </div>
                 ))}
