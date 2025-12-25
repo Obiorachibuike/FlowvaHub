@@ -5,8 +5,9 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const logos = [
-    { name: 'Replit', src: 'https://img.icons8.com/ios-filled/50/000000/replit.png' },
+    { name: 'Replit', src: 'https://img.icons8.com/color/48/replit.png' },
     { name: 'ChatGPT', src: 'https://img.icons8.com/color/48/chatgpt.png' },
+    { name: 'Google', src: 'https://img.icons8.com/color/48/google-logo.png' },
     { name: 'TensorFlow', src: 'https://img.icons8.com/color/48/tensorflow.png' },
     { name: 'Zoom', src: 'https://img.icons8.com/color/48/zoom.png' },
     { name: 'Jotform', src: 'https://img.icons8.com/color/48/jotform.png' },
