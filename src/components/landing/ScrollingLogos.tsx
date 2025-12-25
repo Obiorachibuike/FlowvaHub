@@ -51,7 +51,7 @@ export function ScrollingLogos() {
     <div className="py-12 space-y-4">
         <Marquee direction="right">
             {logos.map((logo, index) => (
-                <div key={`top-${index}`} className="flex items-center justify-center h-20 w-40 bg-gray-100 rounded-2xl shadow-sm p-4">
+                <div key={`top-${index}`} className="flex items-center justify-center h-24 w-48 p-4">
                     <div className="relative w-full h-full flex items-center justify-center">
                         <Image src={logo.src} alt={logo.name} layout="fill" objectFit="contain" />
                     </div>
@@ -60,7 +60,7 @@ export function ScrollingLogos() {
         </Marquee>
         <Marquee direction="left">
             {[...logos].reverse().map((logo, index) => (
-                 <div key={`bottom-${index}`} className="flex items-center justify-center h-20 w-40 bg-gray-100 rounded-2xl shadow-sm p-4">
+                 <div key={`bottom-${index}`} className="flex items-center justify-center h-24 w-48 p-4">
                     <div className="relative w-full h-full flex items-center justify-center">
                         <Image src={logo.src} alt={logo.name} layout="fill" objectFit="contain" />
                     </div>
