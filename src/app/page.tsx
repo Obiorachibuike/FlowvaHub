@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ScrollingLogos } from '@/components/landing/ScrollingLogos';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,12 +43,8 @@ const ForUsers = () => (
               </Button>
             </Link>
 
-            <motion.div variants={itemVariants} className="mt-16 flex justify-center items-center gap-4 md:gap-6 flex-wrap opacity-80" >
-                <div className="w-14 h-14 bg-green-500 rounded-xl shadow-md flex items-center justify-center text-white font-bold text-xs">AI</div>
-                <div className="w-14 h-14 bg-gray-800 rounded-xl shadow-md flex items-center justify-center text-white font-bold text-xs">Replit</div>
-                <div className="w-14 h-14 bg-blue-600 rounded-xl shadow-md flex items-center justify-center text-white font-bold text-2xl">Z</div>
-                <div className="w-14 h-14 bg-white border border-gray-100 rounded-xl shadow-md flex items-center justify-center font-bold text-lg"><span className="text-blue-500">G</span></div>
-                <div className="w-14 h-14 bg-orange-500 rounded-xl shadow-md flex items-center justify-center text-white font-bold text-xs">TF</div>
+            <motion.div variants={itemVariants} className="mt-8">
+                <ScrollingLogos />
             </motion.div>
 
             <motion.p variants={itemVariants} className="mt-16 text-xl md:text-2xl text-gray-800 font-medium max-w-2xl mx-auto leading-relaxed">
@@ -734,3 +731,4 @@ export default function LandingPage() {
         </div>
     );
 }
+
