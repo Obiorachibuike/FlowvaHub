@@ -6,18 +6,6 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
-const FlowvaLogo = () => (
-    <div className="flex items-center space-x-1 font-bold text-xl">
-        <span className="text-purple-600">●</span><span>Flowva</span>
-    </div>
-);
-
-const ToolIcon = ({ children, className }: { children: React.ReactNode, className?: string }) => (
-    <div className={`w-14 h-14 rounded-xl shadow-md flex items-center justify-center ${className}`}>
-        {children}
-    </div>
-);
-
 const ForUsers = () => (
     <>
         <main className="max-w-4xl mx-auto text-center mt-16 px-6">
@@ -35,16 +23,16 @@ const ForUsers = () => (
                 <div className="w-16 h-16 rounded-full coin-gradient flex flex-col items-center justify-center text-[10px] font-bold text-purple-900 border-2 border-white shadow-lg">
                     <span className="text-xs">50</span> FlowCoins
                 </div>
-                <ToolIcon className="bg-blue-500 text-white font-bold text-xs italic">Canva</ToolIcon>
+                <div className="w-14 h-14 bg-blue-500 rounded-xl shadow-md flex items-center justify-center text-white font-bold text-xs italic">Canva</div>
                 <div className="w-16 h-16 rounded-full coin-gradient flex flex-col items-center justify-center text-[10px] font-bold text-purple-900 border-2 border-white shadow-lg">
                     <span className="text-xs">50</span> FlowCoins
                 </div>
-                <ToolIcon className="bg-black text-white text-xl">◈</ToolIcon>
+                <div className="w-14 h-14 bg-black rounded-xl shadow-md flex items-center justify-center text-white text-xl">◈</div>
                 <div className="w-16 h-16 rounded-full coin-gradient flex flex-col items-center justify-center text-[10px] font-bold text-purple-900 border-2 border-white shadow-lg">
                     <span className="text-xs">50</span> FlowCoins
                 </div>
-                <ToolIcon className="bg-white border border-gray-100 text-red-500 text-xs">●●●</ToolIcon>
-                <ToolIcon className="bg-white border border-gray-100 font-bold text-lg"><span className="text-blue-500">G</span></ToolIcon>
+                <div className="w-14 h-14 bg-white border border-gray-100 rounded-xl shadow-md flex items-center justify-center text-red-500 text-xs">●●●</div>
+                <div className="w-14 h-14 bg-white border border-gray-100 rounded-xl shadow-md flex items-center justify-center font-bold text-lg"><span className="text-blue-500">G</span></div>
             </div>
 
             <p className="mt-20 text-xl md:text-2xl text-gray-800 font-medium max-w-2xl mx-auto leading-relaxed">
@@ -654,6 +642,7 @@ const ForBrands = () => (
         </div>
     </>
 );
+
 export default function LandingPage() {
     const [activeTab, setActiveTab] = useState('users');
 
@@ -665,7 +654,9 @@ export default function LandingPage() {
 
             <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
                 <div className="flex items-center space-x-8">
-                    <FlowvaLogo />
+                    <div className="flex items-center space-x-1 font-bold text-xl">
+                        <span className="text-purple-600">●</span><span>Flowva</span>
+                    </div>
                     <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-500">
                         <a href="#" className="hover:text-black">Hub ▾</a>
                         <a href="#" className="hover:text-black">Company ▾</a>
@@ -674,111 +665,105 @@ export default function LandingPage() {
                     </nav>
                 </div>
                 <div className="flex items-center space-x-4">
-                     <Link href="/login">
-                        <Button variant="ghost" className="text-sm font-semibold px-4 py-2">Login</Button>
-                    </Link>
-                     <Link href="/login">
-                        <Button className="text-sm font-semibold bg-gray-900 text-white px-5 py-2 rounded-full">Sign up</Button>
-                    </Link>
+                    <button className="text-sm font-semibold px-4 py-2">Login</button>
+                    <button className="text-sm font-semibold bg-gray-900 text-white px-5 py-2 rounded-full">Sign up</button>
                 </div>
             </header>
-            
+
             <div className="max-w-4xl mx-auto text-center mt-16 px-6">
                 <div className="inline-flex bg-gray-100 p-1 rounded-full mb-12">
                     <button 
                         onClick={() => setActiveTab('users')}
-                        className={`px-4 py-1.5 rounded-full text-xs font-medium flex items-center ${activeTab === 'users' ? 'bg-gray-800 text-white' : 'text-gray-500'}`}
-                    >
+                        className={`px-4 py-1.5 rounded-full text-xs font-medium flex items-center ${activeTab === 'users' ? 'bg-gray-800 text-white' : 'text-gray-500'}`}>
                         <span className="mr-2">👥</span> For users
                     </button>
                     <button 
                         onClick={() => setActiveTab('brands')}
-                        className={`px-4 py-1.5 rounded-full text-xs font-medium flex items-center ${activeTab === 'brands' ? 'bg-gray-800 text-white' : 'text-gray-500'}`}
-                    >
+                        className={`px-4 py-1.5 rounded-full text-xs font-medium flex items-center ${activeTab === 'brands' ? 'bg-gray-800 text-white' : 'text-gray-500'}`}>
                         <span className="mr-2">🏢</span> For brands
                     </button>
                 </div>
             </div>
 
             {activeTab === 'users' ? <ForUsers /> : <ForBrands />}
-            
-            <footer class="bg-black text-white pt-20 pb-10 px-6">
-                <div class="max-w-6xl mx-auto">
-                    <div class="bg-[#1a1a1a] rounded-[32px] p-8 mb-20 text-center max-w-2xl mx-auto">
-                        <div class="mb-6 flex justify-center">
-                            <div class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center text-xl">👓</div>
+
+            <footer className="bg-black text-white pt-20 pb-10 px-6">
+                <div className="max-w-6xl mx-auto">
+                    <div className="bg-[#1a1a1a] rounded-[32px] p-8 mb-20 text-center max-w-2xl mx-auto">
+                        <div className="mb-6 flex justify-center">
+                            <div className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center text-xl">👓</div>
                         </div>
-                        <div class="relative max-w-md mx-auto">
-                            <input type="email" placeholder="Enter email address" class="w-full bg-[#2a2a2a] rounded-full py-4 px-6 text-sm border-none focus:ring-1 focus:ring-gray-500 outline-none"/>
-                            <button class="absolute right-2 top-2 bg-white text-black px-6 py-2 rounded-full text-xs font-bold flex items-center">
-                                Submit <span class="ml-2">→</span>
+                        <div className="relative max-w-md mx-auto">
+                            <input type="email" placeholder="Enter email address" className="w-full bg-[#2a2a2a] rounded-full py-4 px-6 text-sm border-none focus:ring-1 focus:ring-gray-500 outline-none"/>
+                            <button className="absolute right-2 top-2 bg-white text-black px-6 py-2 rounded-full text-xs font-bold flex items-center">
+                                Submit <span className="ml-2">→</span>
                             </button>
                         </div>
-                        <p class="text-[10px] text-gray-500 mt-4">10,000+ end their week inspired. Join Friday Flow.</p>
+                        <p className="text-[10px] text-gray-500 mt-4">10,000+ end their week inspired. Join Friday Flow.</p>
                     </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20 border-t border-gray-800 pt-16">
-                        <div class="col-span-2 md:col-span-1">
-                            <div class="flex items-center space-x-2 font-bold text-lg mb-4">
-                                <span class="text-white">👓</span><span>Flowva</span>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20 border-t border-gray-800 pt-16">
+                        <div className="col-span-2 md:col-span-1">
+                            <div className="flex items-center space-x-2 font-bold text-lg mb-4">
+                                <span className="text-white">👓</span><span>Flowva</span>
                             </div>
-                            <p class="text-xs text-gray-500 leading-relaxed max-w-[200px]">
+                            <p className="text-xs text-gray-500 leading-relaxed max-w-[200px]">
                                 The smart way to manage your digital life and get rewarded.
                             </p>
-                            <p class="text-[10px] text-gray-600 mt-8">© 2025 Flowva</p>
+                            <p className="text-[10px] text-gray-600 mt-8">© 2025 Flowva</p>
                         </div>
 
-                        <div class="space-y-4">
-                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Hub</h4>
-                            <ul class="text-xs space-y-3 text-gray-500 font-medium">
-                                <li><a href="#" class="hover:text-white transition-colors">Discover</a></li>
-                                <li><a href="#" class="hover:text-white transition-colors">Library</a></li>
-                                <li><a href="#" class="hover:text-white transition-colors">Rewards</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="space-y-4">
-                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Company</h4>
-                            <ul class="text-xs space-y-3 text-gray-500 font-medium">
-                                <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
-                                <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
-                            </ul>
-                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mt-8">Legal</h4>
-                            <ul class="text-xs space-y-3 text-gray-500 font-medium">
-                                <li><a href="#" class="hover:text-white transition-colors">Terms and Conditions</a></li>
-                                <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <div className="space-y-4">
+                            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Hub</h4>
+                            <ul className="text-xs space-y-3 text-gray-500 font-medium">
+                                <li><a href="#" className="hover:text-white transition-colors">Discover</a></li>
+                                <li><a href="#" className="hover:text-white transition-colors">Library</a></li>
+                                <li><a href="#" className="hover:text-white transition-colors">Rewards</a></li>
                             </ul>
                         </div>
 
-                        <div class="space-y-4">
-                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Support</h4>
-                            <ul class="text-xs space-y-3 text-gray-500 font-medium">
-                                <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
-                                <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <div className="space-y-4">
+                            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Company</h4>
+                            <ul className="text-xs space-y-3 text-gray-500 font-medium">
+                                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
+                                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
                             </ul>
-                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mt-8">Community</h4>
-                            <ul class="text-xs space-y-3 text-gray-500 font-medium">
-                                <li><a href="#" class="hover:text-white transition-colors">Affiliate</a></li>
-                                <li><a href="#" class="hover:text-white transition-colors">Influencer</a></li>
-                                <li><a href="#" class="hover:text-white transition-colors">Referral</a></li>
+                            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-8">Legal</h4>
+                            <ul className="text-xs space-y-3 text-gray-500 font-medium">
+                                <li><a href="#" className="hover:text-white transition-colors">Terms and Conditions</a></li>
+                                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div className="space-y-4">
+                            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Support</h4>
+                            <ul className="text-xs space-y-3 text-gray-500 font-medium">
+                                <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+                                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+                            </ul>
+                            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-8">Community</h4>
+                            <ul className="text-xs space-y-3 text-gray-500 font-medium">
+                                <li><a href="#" className="hover:text-white transition-colors">Affiliate</a></li>
+                                <li><a href="#" className="hover:text-white transition-colors">Influencer</a></li>
+                                <li><a href="#" className="hover:text-white transition-colors">Referral</a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap justify-center gap-6 border-t border-gray-800 pt-8 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-                        <a href="#" class="flex items-center hover:text-white"><span class="mr-2">f</span> Facebook</a>
-                        <a href="#" class="flex items-center hover:text-white"><span class="mr-2">𝕏</span> X (Formerly Twitter)</a>
-                        <a href="#" class="flex items-center hover:text-white"><span class="mr-2"></span> Instagram</a>
-                        <a href="#" class="flex items-center hover:text-white"><span class="mr-2"></span> Linkedin</a>
-                        <a href="#" class="flex items-center hover:text-white"><span class="mr-2"></span> Tiktok</a>
+                    <div className="flex flex-wrap justify-center gap-6 border-t border-gray-800 pt-8 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                        <a href="#" className="flex items-center hover:text-white"><span className="mr-2">f</span> Facebook</a>
+                        <a href="#" className="flex items-center hover:text-white"><span className="mr-2">𝕏</span> X (Formerly Twitter)</a>
+                        <a href="#" className="flex items-center hover:text-white"><span className="mr-2"></span> Instagram</a>
+                        <a href="#" className="flex items-center hover:text-white"><span className="mr-2"></span> Linkedin</a>
+                        <a href="#" className="flex items-center hover:text-white"><span className="mr-2"></span> Tiktok</a>
                     </div>
                 </div>
             </footer>
-            
-            <div class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg cursor-pointer">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+             <div className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg cursor-pointer">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
         </div>
     );
 }
 
+  
