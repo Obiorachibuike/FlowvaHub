@@ -567,79 +567,6 @@ const ForBrands = () => (
             </section>
 
         </div>
-        <div className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
-
-            <section className="text-center">
-                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-12 uppercase">Need Answers?</h2>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
-                        <span className="text-sm font-bold text-gray-800 text-left">What is Flowva and who are your users?</span>
-                        <span className="text-[10px] text-gray-400">▶</span>
-                    </div>
-                    
-                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
-                        <span className="text-sm font-bold text-gray-800 text-left">How does the subscription work?</span>
-                        <span className="text-[10px] text-gray-400">▶</span>
-                    </div>
-        
-                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
-                        <span className="text-sm font-bold text-gray-800 text-left">Can I run multiple features at once?</span>
-                        <span className="text-[10px] text-gray-400">▶</span>
-                    </div>
-        
-                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
-                        <span className="text-sm font-bold text-gray-800 text-left">How are users rewarded?</span>
-                        <span className="text-[10px] text-gray-400">▶</span>
-                    </div>
-        
-                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
-                        <span className="text-sm font-bold text-gray-800 text-left">Can I target specific types of users?</span>
-                        <span className="text-[10px] text-gray-400">▶</span>
-                    </div>
-        
-                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
-                        <span className="text-sm font-bold text-gray-800 text-left">What is optional premium support?</span>
-                        <span className="text-[10px] text-gray-400">▶</span>
-                    </div>
-        
-                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
-                        <span className="text-sm font-bold text-gray-800 text-left">What happens when Early-Bird pricing ends?</span>
-                        <span className="text-[10px] text-gray-400">▶</span>
-                    </div>
-        
-                    <div className="bg-gray-50/80 p-5 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-white hover:shadow-sm transition-all">
-                        <span className="text-sm font-bold text-gray-800 text-left">Can I switch plans anytime?</span>
-                        <span className="text-[10px] text-gray-400">▶</span>
-                    </div>
-                </div>
-            </section>
-        
-            <section className="bg-[#1d4ed8] rounded-[40px] p-12 text-center text-white relative overflow-hidden">
-                <div className="relative z-10">
-                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 uppercase">
-                        Start Your Campaign
-                    </h2>
-                    
-                    <div className="flex justify-center mb-10">
-                        <div className="relative w-48 h-32 flex items-center justify-center">
-                            <span className="text-7xl">🤝</span>
-                        </div>
-                    </div>
-        
-                    <p className="text-xs font-medium max-w-sm mx-auto mb-10 leading-relaxed opacity-90">
-                        Flowva works with brands to give our users exclusive discounts, cashback, and perks.
-                    </p>
-                    
-                    <button className="bg-black text-white px-10 py-3.5 rounded-full text-xs font-bold hover:scale-105 transition-transform shadow-2xl">
-                        Claim Your Spot
-                    </button>
-                </div>
-                
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-500/20 blur-[100px]"></div>
-            </section>
-        
-        </div>
     </>
 );
 
@@ -766,4 +693,4 @@ export default function LandingPage() {
     );
 }
 
-  
+    
