@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import Link from 'next/link';
@@ -8,6 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ScrollingLogos } from '@/components/landing/ScrollingLogos';
 import { ImageSlider } from '@/components/landing/ImageSlider';
+import Image from 'next/image';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -118,33 +120,35 @@ const ForUsers = () => (
                 </div>
             </motion.section>
 
-            <motion.section variants={itemVariants} className="bg-[#fff1f2] rounded-[40px] p-8 md:p-12">
-                <span className="bg-gray-200/50 text-[10px] px-3 py-1 rounded-full font-bold text-gray-600 uppercase">Download</span>
-                <h2 className="text-2xl md:text-3xl font-bold mt-6 mb-8 max-w-md leading-tight">ORGANIZE, DISCOVER, AND EARN ON THE GO.</h2>
-                
-                <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-6 flex flex-col md:flex-row items-center gap-6 border border-white">
-                    <div className="flex flex-col space-y-3 w-full md:w-auto">
-                        <button className="flex items-center space-x-3 bg-gray-100/80 px-4 py-2 rounded-xl text-xs font-semibold hover:bg-white transition-colors">
-                            <span className="text-blue-500 text-lg"></span>
-                            <span>Apple App Store</span>
-                        </button>
-                        <button className="flex items-center space-x-3 bg-gray-100/80 px-4 py-2 rounded-xl text-xs font-semibold hover:bg-white transition-colors">
-                            <span className="text-green-600 text-lg">▶</span>
-                            <span>Google Play Store</span>
-                        </button>
-                    </div>
-                    <div className="w-24 h-24 bg-white p-2 rounded-xl border border-gray-100 shadow-sm flex items-center justify-center">
-                       <div className="grid grid-cols-3 gap-1 opacity-20">
-                           <div className="w-4 h-4 bg-black"></div><div className="w-4 h-4 bg-black"></div><div className="w-4 h-4 bg-black"></div>
-                           <div className="w-4 h-4 bg-black"></div><div className="w-4 h-4 bg-black"></div><div className="w-4 h-4 bg-black"></div>
-                       </div>
-                    </div>
-                </div>
+            <motion.section variants={itemVariants} className="bg-[#FDF0F1] w-full max-w-lg rounded-[40px] p-8 shadow-lg mx-auto border border-pink-100">
+              <div className="inline-block bg-[#F2E4E6] text-gray-800 px-6 py-1.5 rounded-full text-sm font-bold mb-6">
+                Download
+              </div>
 
-                <div className="mt-6 bg-white/40 py-3 px-6 rounded-full inline-flex items-center space-x-2 text-sm text-gray-600">
-                    <span>⏳</span>
-                    <span className="font-medium">Coming soon</span>
+              <h1 className="text-3xl font-black text-gray-900 leading-tight tracking-tighter mb-8 uppercase italic">
+                Organize, Discover, <br/>and Earn on the go.
+              </h1>
+
+              <div className="bg-white rounded-[40px] p-6 flex flex-col gap-4 items-center shadow-inner">
+                <a href="https://www.flowvahub.com" target="_blank" className="w-full bg-[#F3F4F6] hover:bg-gray-200 transition-all py-4 px-8 rounded-full flex items-center justify-center gap-3 group">
+                  <Image src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" width={24} height={24} className="group-hover:scale-110 transition-transform" alt="Apple"/>
+                  <span className="text-lg font-bold text-gray-900">Apple App Store</span>
+                </a>
+
+                <a href="https://www.flowvahub.com" target="_blank" className="w-full bg-[#F3F4F6] hover:bg-gray-200 transition-all py-4 px-8 rounded-full flex items-center justify-center gap-3 group">
+                  <Image src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" width={24} height={24} className="w-auto h-6 group-hover:scale-110 transition-transform" alt="Google"/>
+                  <span className="text-lg font-bold text-gray-900">Google Play Store</span>
+                </a>
+
+                <div className="mt-4 p-3 border-4 border-gray-50 rounded-[35px] hover:rotate-3 transition-transform cursor-pointer">
+                  <Image src="https://picsum.photos/seed/qrcode/112/112" width={112} height={112} className="object-contain rounded-xl" alt="QR Code Link" data-ai-hint="qr code"/>
                 </div>
+              </div>
+
+              <div className="mt-6 bg-white/80 backdrop-blur-sm rounded-full py-4 px-8 flex items-center gap-3 border border-white">
+                <span className="text-xl">⏳</span>
+                <span className="text-lg font-bold text-gray-900 italic">Coming soon</span>
+              </div>
             </motion.section>
 
             <motion.section variants={itemVariants} className="bg-[#111111] rounded-[40px] p-8 md:p-12 text-white">
