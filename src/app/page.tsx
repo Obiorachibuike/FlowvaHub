@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -602,7 +602,7 @@ export default function LandingPage() {
     const [activeTab, setActiveTab] = useState('users');
 
     return (
-        <div className="bg-white text-gray-900">
+        <div className="bg-white text-gray-900 overflow-x-hidden">
             <motion.div initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
                 <div className="bg-black text-white text-xs py-2 text-center px-4">
                     🚀 Big news! The full Flowva experience + mobile apps are launching soon on iOS & Android
@@ -645,8 +645,19 @@ export default function LandingPage() {
                     </button>
                 </div>
             </motion.div>
+            
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={activeTab}
+                    initial={{ x: 300, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -300, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    {activeTab === 'users' ? <ForUsers /> : <ForBrands />}
+                </motion.div>
+            </AnimatePresence>
 
-            {activeTab === 'users' ? <ForUsers /> : <ForBrands />}
 
             <motion.footer 
                  initial="hidden"
@@ -731,3 +742,4 @@ export default function LandingPage() {
         </div>
     );
 }
+
