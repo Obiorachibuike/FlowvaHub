@@ -42,23 +42,15 @@ const ForUsers = () => (
               </Button>
             </Link>
 
-            <motion.div variants={itemVariants} className="mt-20 grid grid-cols-4 md:grid-cols-7 gap-4 items-center justify-items-center opacity-80">
-                <div className="w-16 h-16 rounded-full coin-gradient flex flex-col items-center justify-center text-[10px] font-bold text-purple-900 border-2 border-white shadow-lg">
-                    <span className="text-xs">50</span> FlowCoins
-                </div>
-                <div className="w-14 h-14 bg-blue-500 rounded-xl shadow-md flex items-center justify-center text-white font-bold text-xs italic">Canva</div>
-                <div className="w-16 h-16 rounded-full coin-gradient flex flex-col items-center justify-center text-[10px] font-bold text-purple-900 border-2 border-white shadow-lg">
-                    <span className="text-xs">50</span> FlowCoins
-                </div>
-                <div className="w-14 h-14 bg-black rounded-xl shadow-md flex items-center justify-center text-white text-xl">◈</div>
-                <div className="w-16 h-16 rounded-full coin-gradient flex flex-col items-center justify-center text-[10px] font-bold text-purple-900 border-2 border-white shadow-lg">
-                    <span className="text-xs">50</span> FlowCoins
-                </div>
-                <div className="w-14 h-14 bg-white border border-gray-100 rounded-xl shadow-md flex items-center justify-center text-red-500 text-xs">●●●</div>
+            <motion.div variants={itemVariants} className="mt-16 flex justify-center items-center gap-4 md:gap-6 flex-wrap opacity-80" >
+                <div className="w-14 h-14 bg-green-500 rounded-xl shadow-md flex items-center justify-center text-white font-bold text-xs">AI</div>
+                <div className="w-14 h-14 bg-gray-800 rounded-xl shadow-md flex items-center justify-center text-white font-bold text-xs">Replit</div>
+                <div className="w-14 h-14 bg-blue-600 rounded-xl shadow-md flex items-center justify-center text-white font-bold text-2xl">Z</div>
                 <div className="w-14 h-14 bg-white border border-gray-100 rounded-xl shadow-md flex items-center justify-center font-bold text-lg"><span className="text-blue-500">G</span></div>
+                <div className="w-14 h-14 bg-orange-500 rounded-xl shadow-md flex items-center justify-center text-white font-bold text-xs">TF</div>
             </motion.div>
 
-            <motion.p variants={itemVariants} className="mt-20 text-xl md:text-2xl text-gray-800 font-medium max-w-2xl mx-auto leading-relaxed">
+            <motion.p variants={itemVariants} className="mt-16 text-xl md:text-2xl text-gray-800 font-medium max-w-2xl mx-auto leading-relaxed">
                 Turn productivity into rewards with a calm, smart space that organizes your tools, and keeps you in control.
             </motion.p>
 
@@ -742,4 +734,3 @@ export default function LandingPage() {
         </div>
     );
 }
-
