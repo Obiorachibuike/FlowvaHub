@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ScrollingLogos } from '@/components/landing/ScrollingLogos';
+import { ImageSlider } from '@/components/landing/ImageSlider';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -38,7 +39,7 @@ const ForUsers = () => (
             </h1>
 
             <Link href="/login">
-              <Button size="lg" className="bg-gray-900 text-white rounded-full font-bold text-sm shadow-xl hover:scale-105 transition-transform h-auto px-8 py-4">
+              <Button size="lg" className="bg-gray-900 text-white rounded-full font-bold text-sm shadow-xl hover:scale-105 transition-transform h-auto px-8 py-4 focus-visible:outline-none">
                   Start Earning Today
               </Button>
             </Link>
@@ -53,39 +54,39 @@ const ForUsers = () => (
             
             <motion.div variants={itemVariants} className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
     
-                <div class="bg-[#f3e8ff] p-8 rounded-3xl border border-purple-100 shadow-sm">
-                <h2 class="text-5xl font-semibold mb-2">10,000+</h2>
-                <p class="text-xl font-medium mb-8">Users</p>
-                <p class="text-gray-600 mb-8">Already simplifying their workflow with Flowva</p>
-                <div class="flex items-center">
-                    <div class="flex -space-x-2">
-                    <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
-                    <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-white"></div>
-                    <div class="w-8 h-8 rounded-full bg-gray-500 border-2 border-white"></div>
+                <div className="bg-[#f3e8ff] p-8 rounded-3xl border border-purple-100 shadow-sm">
+                <h2 className="text-5xl font-semibold mb-2">10,000+</h2>
+                <p className="text-xl font-medium mb-8">Users</p>
+                <p className="text-gray-600 mb-8">Already simplifying their workflow with Flowva</p>
+                <div className="flex items-center">
+                    <div className="flex -space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
+                    <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-white"></div>
+                    <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-white"></div>
                     </div>
-                    <span class="ml-3 text-sm font-semibold text-gray-700">10,000+</span>
+                    <span className="ml-3 text-sm font-semibold text-gray-700">10,000+</span>
                 </div>
                 </div>
 
-                <div class="bg-[#f3e8ff] p-8 rounded-3xl border border-purple-100 shadow-sm">
-                <h2 class="text-5xl font-semibold mb-2">200+</h2>
-                <p class="text-xl font-medium mb-8">Tools</p>
-                <p class="text-gray-600 mb-8">Curated and organized for you in the library</p>
-                <div class="flex items-center">
-                    <div class="flex gap-1">
-                    <div class="w-6 h-6 rounded bg-indigo-600"></div>
-                    <div class="w-6 h-6 rounded bg-orange-500"></div>
-                    <div class="w-6 h-6 rounded bg-blue-400"></div>
+                <div className="bg-[#f3e8ff] p-8 rounded-3xl border border-purple-100 shadow-sm">
+                <h2 className="text-5xl font-semibold mb-2">200+</h2>
+                <p className="text-xl font-medium mb-8">Tools</p>
+                <p className="text-gray-600 mb-8">Curated and organized for you in the library</p>
+                <div className="flex items-center">
+                    <div className="flex gap-1">
+                    <div className="w-6 h-6 rounded bg-indigo-600"></div>
+                    <div className="w-6 h-6 rounded bg-orange-500"></div>
+                    <div className="w-6 h-6 rounded bg-blue-400"></div>
                     </div>
-                    <span class="ml-3 text-sm font-semibold text-gray-700">and many more</span>
+                    <span className="ml-3 text-sm font-semibold text-gray-700">and many more</span>
                 </div>
                 </div>
 
-                <div class="bg-[#f3e8ff] p-8 rounded-3xl border border-purple-100 shadow-sm">
-                <h2 class="text-5xl font-semibold mb-2">25+</h2>
-                <p class="text-xl font-medium mb-8">Countries</p>
-                <p class="text-gray-600 mb-8">Reviewing tools and building smarter stacks every day</p>
-                <div class="flex gap-2 text-xl">
+                <div className="bg-[#f3e8ff] p-8 rounded-3xl border border-purple-100 shadow-sm">
+                <h2 className="text-5xl font-semibold mb-2">25+</h2>
+                <p className="text-xl font-medium mb-8">Countries</p>
+                <p className="text-gray-600 mb-8">Reviewing tools and building smarter stacks every day</p>
+                <div className="flex gap-2 text-xl">
                     <span>🇳🇬</span><span>🇺🇸</span><span>🇮🇳</span><span>🇨🇦</span><span>🇵🇭</span><span>🇰🇪</span><span>🇬🇧</span>
                 </div>
                 </div>
@@ -95,24 +96,24 @@ const ForUsers = () => (
         
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-4xl mx-auto px-6 space-y-12 mb-20">
             <motion.section variants={itemVariants} className="max-w-4xl mx-auto bg-[#c2f2bb] rounded-[40px] p-12 text-center">
-                <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-16 uppercase">
+                <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-16 uppercase">
                 Everything in one<br/>place
                 </h1>
                 
-                <div class="flex flex-col md:flex-row justify-center items-end gap-8">
-                <div class="bg-white rounded-3xl p-6 shadow-xl w-full max-w-sm text-left">
-                    <div class="bg-blue-50 rounded-2xl h-48 mb-6 flex items-center justify-center relative overflow-hidden">
-                    <div class="w-24 h-20 bg-gray-100 rounded-lg border-2 border-gray-200 shadow-inner flex items-center justify-center">
-                        <span class="text-2xl">📁</span>
+                <div className="flex flex-col md:flex-row justify-center items-end gap-8">
+                <div className="bg-white rounded-3xl p-6 shadow-xl w-full max-w-sm text-left">
+                    <div className="bg-blue-50 rounded-2xl h-48 mb-6 flex items-center justify-center relative overflow-hidden">
+                    <div className="w-24 h-20 bg-gray-100 rounded-lg border-2 border-gray-200 shadow-inner flex items-center justify-center">
+                        <span className="text-2xl">📁</span>
                     </div>
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Organize your tools</h3>
-                    <p class="text-gray-500 text-sm">Keep your apps, subscriptions, and tech stack in one simple space.</p>
+                    <h3 className="font-bold text-lg mb-2">Organize your tools</h3>
+                    <p className="text-gray-500 text-sm">Keep your apps, subscriptions, and tech stack in one simple space.</p>
                 </div>
 
-                <div class="bg-white/50 rounded-3xl p-6 w-full max-w-[200px] text-left opacity-80 scale-95 hidden md:block">
-                    <div class="bg-gray-100/50 rounded-2xl h-40 mb-4"></div>
-                    <h3 class="font-bold text-sm text-gray-600">Discover what works</h3>
+                <div className="bg-white/50 rounded-3xl p-6 w-full max-w-[200px] text-left opacity-80 scale-95 hidden md:block">
+                    <div className="bg-gray-100/50 rounded-2xl h-40 mb-4"></div>
+                    <h3 className="font-bold text-sm text-gray-600">Discover what works</h3>
                 </div>
                 </div>
             </motion.section>
@@ -174,6 +175,10 @@ const ForUsers = () => (
                     <div className="bg-gray-800 rounded-2xl h-48 flex items-center justify-center text-2xl">🪙</div>
                 </div>
             </motion.section>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="my-24">
+             <ImageSlider />
         </motion.div>
 
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-4xl mx-auto px-6 space-y-20 mb-24">
@@ -304,7 +309,7 @@ const ForBrands = () => (
                 CONNECT WITH <span className="gradient-text px-4 border-2 border-purple-200 rounded-full italic">TECH</span> PROFESSIONALS WHO ACTUALLY ENGAGE
             </h1>
 
-            <button className="bg-black text-white px-10 py-4 rounded-full font-black text-sm shadow-2xl hover:scale-105 transition-all mb-20 uppercase tracking-widest">
+            <button className="bg-black text-white px-10 py-4 rounded-full font-black text-sm shadow-2xl hover:scale-105 transition-all mb-20 uppercase tracking-widest focus-visible:outline-none">
                 Start Your 3-Day Free Trial
             </button>
 
