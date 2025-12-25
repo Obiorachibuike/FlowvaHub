@@ -30,7 +30,7 @@ const itemVariants = {
 
 
 const ForUsers = () => (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible">
+    <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <motion.main variants={itemVariants} className="max-w-4xl mx-auto text-center mt-16 px-6">
             <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-10">
                 YOUR <span className="gradient-text px-2 border-2 border-purple-200 rounded-full">SMART</span> SPACE TO MANAGE YOUR DIGITAL LIFE AND BE REWARDED
@@ -105,7 +105,7 @@ const ForUsers = () => (
             </motion.div>
         </motion.main>
         
-        <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-6 space-y-12 mb-20">
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-4xl mx-auto px-6 space-y-12 mb-20">
             <motion.section variants={itemVariants} className="bg-[#f3e8ff] rounded-[40px] p-8 md:p-12 text-center overflow-hidden relative">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12">EVERYTHING IN ONE PLACE</h2>
                 
@@ -191,7 +191,7 @@ const ForUsers = () => (
             </motion.section>
         </motion.div>
 
-        <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-6 space-y-20 mb-24">
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-4xl mx-auto px-6 space-y-20 mb-24">
             <motion.section variants={itemVariants} className="text-center">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 uppercase">Simple, Rewarding, Calm</h2>
                 
@@ -260,7 +260,7 @@ const ForUsers = () => (
             </motion.section>
         </motion.div>
 
-        <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
             <motion.section variants={itemVariants} className="text-center">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 uppercase">Need Answers?</h2>
                 
@@ -313,7 +313,7 @@ const ForUsers = () => (
 );
 
 const ForBrands = () => (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible">
+    <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <motion.main variants={itemVariants} className="max-w-6xl mx-auto text-center mt-16 px-6">
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-12 max-w-5xl mx-auto uppercase">
                 CONNECT WITH <span className="gradient-text px-4 border-2 border-purple-200 rounded-full italic">TECH</span> PROFESSIONALS WHO ACTUALLY ENGAGE
@@ -405,7 +405,7 @@ const ForBrands = () => (
                 </div>
             </div>
         </motion.section>
-        <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
 
             <motion.section variants={itemVariants} className="bg-black rounded-[40px] p-8 md:p-12 text-white relative overflow-hidden">
                 <div className="relative z-10">
@@ -532,7 +532,7 @@ const ForBrands = () => (
                 </div>
             </div>
         </motion.section>
-        <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
 
             <motion.div variants={itemVariants} className="space-y-6">
                 <div className="bg-[#15803d] text-white rounded-[40px] p-10 md:p-14 text-left relative overflow-hidden group">
@@ -594,7 +594,6 @@ const ForBrands = () => (
                     <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
                 </div>
             </motion.section>
-
         </motion.div>
     </motion.div>
 );
