@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -5,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import { useToast } from '@/hooks/use-toast';
 import { useSupabaseUser } from '@/contexts/SupabaseProvider';
@@ -54,7 +56,11 @@ export default function ForgotPasswordPage() {
 
   return (
     <div className="min-h-screen bg-[#8b31ff] flex items-center justify-center px-4">
-        <div className="bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-center">
+        <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-center">
             <h2 className="text-2xl font-extrabold text-[#8b31ff] mb-2">Reset Password</h2>
             <p className="text-xs text-gray-500 mb-8 font-medium">Enter your email to receive a reset link</p>
             
@@ -75,7 +81,7 @@ export default function ForgotPasswordPage() {
             <p className="mt-8 text-xs font-semibold text-gray-400">
                 Remember your password? <Link href="/login" className="text-[#8b31ff] hover:underline">Sign in</Link>
             </p>
-        </div>
+        </motion.div>
     </div>
   );
 }

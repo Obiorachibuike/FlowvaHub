@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -6,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import { useToast } from '@/hooks/use-toast';
 import { useSupabaseUser } from '@/contexts/SupabaseProvider';
@@ -78,7 +80,11 @@ export default function SignupPage() {
 
   return (
     <div className="min-h-screen bg-[#8b31ff] flex items-center justify-center px-4 py-12">
-        <div className="bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-center">
+        <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="bg-white w-full max-w-md rounded-2xl p-8 shadow-2xl text-center">
             <h2 className="text-2xl font-extrabold text-[#8b31ff] mb-2">Create Your Account</h2>
             <p className="text-xs text-gray-500 mb-8 font-medium">Sign up to manage your tools</p>
             
@@ -135,7 +141,7 @@ export default function SignupPage() {
             <p className="text-xs font-semibold text-gray-400">
                 Already have an account? <Link href="/login" className="text-[#8b31ff] hover:underline">Log In</Link>
             </p>
-        </div>
+        </motion.div>
     </div>
   );
 }

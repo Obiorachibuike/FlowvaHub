@@ -5,10 +5,33 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.5,
+        },
+    },
+};
+
 
 const ForUsers = () => (
-    <>
-        <main className="max-w-4xl mx-auto text-center mt-16 px-6">
+    <motion.div variants={containerVariants} initial="hidden" animate="visible">
+        <motion.main variants={itemVariants} className="max-w-4xl mx-auto text-center mt-16 px-6">
             <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-10">
                 YOUR <span className="gradient-text px-2 border-2 border-purple-200 rounded-full">SMART</span> SPACE TO MANAGE YOUR DIGITAL LIFE AND BE REWARDED
             </h1>
@@ -19,7 +42,7 @@ const ForUsers = () => (
               </Button>
             </Link>
 
-            <div className="mt-20 grid grid-cols-4 md:grid-cols-7 gap-4 items-center justify-items-center opacity-80">
+            <motion.div variants={itemVariants} className="mt-20 grid grid-cols-4 md:grid-cols-7 gap-4 items-center justify-items-center opacity-80">
                 <div className="w-16 h-16 rounded-full coin-gradient flex flex-col items-center justify-center text-[10px] font-bold text-purple-900 border-2 border-white shadow-lg">
                     <span className="text-xs">50</span> FlowCoins
                 </div>
@@ -33,51 +56,57 @@ const ForUsers = () => (
                 </div>
                 <div className="w-14 h-14 bg-white border border-gray-100 rounded-xl shadow-md flex items-center justify-center text-red-500 text-xs">●●●</div>
                 <div className="w-14 h-14 bg-white border border-gray-100 rounded-xl shadow-md flex items-center justify-center font-bold text-lg"><span className="text-blue-500">G</span></div>
-            </div>
+            </motion.div>
 
-            <p className="mt-20 text-xl md:text-2xl text-gray-800 font-medium max-w-2xl mx-auto leading-relaxed">
+            <motion.p variants={itemVariants} className="mt-20 text-xl md:text-2xl text-gray-800 font-medium max-w-2xl mx-auto leading-relaxed">
                 Turn productivity into rewards with a calm, smart space that organizes your tools, and keeps you in control.
-            </p>
+            </motion.p>
 
-            <div className="grid md:grid-cols-3 gap-6 mt-20 mb-20 text-left">
-                <Card className="bg-purple-50 p-8 rounded-3xl border border-purple-100">
-                    <CardContent className="p-0">
-                        <h3 className="text-4xl font-bold mb-2">10,000+</h3>
-                        <p className="font-semibold text-gray-600 mb-6">Users</p>
-                        <p className="text-sm text-gray-400">Already simplifying their workflow with Flowva</p>
-                        <div className="mt-8 text-xs font-bold text-gray-400">10,000+</div>
-                    </CardContent>
-                </Card>
+            <motion.div variants={containerVariants} className="grid md:grid-cols-3 gap-6 mt-20 mb-20 text-left">
+                <motion.div variants={itemVariants}>
+                    <Card className="bg-purple-50 p-8 rounded-3xl border border-purple-100">
+                        <CardContent className="p-0">
+                            <h3 className="text-4xl font-bold mb-2">10,000+</h3>
+                            <p className="font-semibold text-gray-600 mb-6">Users</p>
+                            <p className="text-sm text-gray-400">Already simplifying their workflow with Flowva</p>
+                            <div className="mt-8 text-xs font-bold text-gray-400">10,000+</div>
+                        </CardContent>
+                    </Card>
+                </motion.div>
 
-                <Card className="bg-purple-50 p-8 rounded-3xl border border-purple-100">
-                    <CardContent className="p-0">
-                        <h3 className="text-4xl font-bold mb-2">200+</h3>
-                        <p className="font-semibold text-gray-600 mb-6">Tools</p>
-                        <p className="text-sm text-gray-400">Curated and organized for you in the library</p>
-                        <div className="mt-8 flex space-x-1 grayscale opacity-50">
-                            <span className="bg-gray-800 p-1 rounded text-white text-[8px]">⌨️</span>
-                            <span className="bg-gray-800 p-1 rounded text-white text-[8px]">📷</span>
-                            <span className="bg-gray-800 p-1 rounded text-white text-[8px]">🎨</span>
-                            <span className="text-[8px] self-center ml-2 text-gray-500">and many more</span>
-                        </div>
-                    </CardContent>
-                </Card>
+                <motion.div variants={itemVariants}>
+                    <Card className="bg-purple-50 p-8 rounded-3xl border border-purple-100">
+                        <CardContent className="p-0">
+                            <h3 className="text-4xl font-bold mb-2">200+</h3>
+                            <p className="font-semibold text-gray-600 mb-6">Tools</p>
+                            <p className="text-sm text-gray-400">Curated and organized for you in the library</p>
+                            <div className="mt-8 flex space-x-1 grayscale opacity-50">
+                                <span className="bg-gray-800 p-1 rounded text-white text-[8px]">⌨️</span>
+                                <span className="bg-gray-800 p-1 rounded text-white text-[8px]">📷</span>
+                                <span className="bg-gray-800 p-1 rounded text-white text-[8px]">🎨</span>
+                                <span className="text-[8px] self-center ml-2 text-gray-500">and many more</span>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </motion.div>
 
-                <Card className="bg-purple-50 p-8 rounded-3xl border border-purple-100">
-                    <CardContent className="p-0">
-                        <h3 className="text-4xl font-bold mb-2">25+</h3>
-                        <p className="font-semibold text-gray-600 mb-6">Countries</p>
-                        <p className="text-sm text-gray-400">Reviewing tools and building smarter stacks every day</p>
-                        <div className="mt-8 flex space-x-2 text-lg">
-                            🇳🇬 🇺🇸 🇮🇳 🇨🇦 🇰🇪 🇬🇧
-                        </div>
-                    </CardContent>
-                </Card>
-            </div>
-        </main>
+                <motion.div variants={itemVariants}>
+                    <Card className="bg-purple-50 p-8 rounded-3xl border border-purple-100">
+                        <CardContent className="p-0">
+                            <h3 className="text-4xl font-bold mb-2">25+</h3>
+                            <p className="font-semibold text-gray-600 mb-6">Countries</p>
+                            <p className="text-sm text-gray-400">Reviewing tools and building smarter stacks every day</p>
+                            <div className="mt-8 flex space-x-2 text-lg">
+                                🇳🇬 🇺🇸 🇮🇳 🇨🇦 🇰🇪 🇬🇧
+                            </div>
+                        </CardContent>
+                    </Card>
+                </motion.div>
+            </motion.div>
+        </motion.main>
         
-        <div className="max-w-4xl mx-auto px-6 space-y-12 mb-20">
-            <section className="bg-[#f3e8ff] rounded-[40px] p-8 md:p-12 text-center overflow-hidden relative">
+        <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-6 space-y-12 mb-20">
+            <motion.section variants={itemVariants} className="bg-[#f3e8ff] rounded-[40px] p-8 md:p-12 text-center overflow-hidden relative">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12">EVERYTHING IN ONE PLACE</h2>
                 
                 <div className="relative flex justify-center items-end h-64">
@@ -101,9 +130,9 @@ const ForUsers = () => (
                     <span className="w-2 h-2 bg-gray-800 rounded-full"></span>
                     <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
                 </div>
-            </section>
+            </motion.section>
 
-            <section className="bg-[#fff1f2] rounded-[40px] p-8 md:p-12">
+            <motion.section variants={itemVariants} className="bg-[#fff1f2] rounded-[40px] p-8 md:p-12">
                 <span className="bg-gray-200/50 text-[10px] px-3 py-1 rounded-full font-bold text-gray-600 uppercase">Download</span>
                 <h2 className="text-2xl md:text-3xl font-bold mt-6 mb-8 max-w-md leading-tight">ORGANIZE, DISCOVER, AND EARN ON THE GO.</h2>
                 
@@ -130,9 +159,9 @@ const ForUsers = () => (
                     <span>⏳</span>
                     <span className="font-medium">Coming soon</span>
                 </div>
-            </section>
+            </motion.section>
 
-            <section className="bg-[#111111] rounded-[40px] p-8 md:p-12 text-white">
+            <motion.section variants={itemVariants} className="bg-[#111111] rounded-[40px] p-8 md:p-12 text-white">
                 <span className="bg-gray-800 text-[10px] px-3 py-1 rounded-full font-bold text-gray-400 uppercase">Benefits</span>
                 
                 <ul className="mt-8 space-y-4 mb-12">
@@ -159,11 +188,11 @@ const ForUsers = () => (
                     <div className="bg-gray-800 rounded-2xl h-48 flex items-center justify-center text-2xl">🧭</div>
                     <div className="bg-gray-800 rounded-2xl h-48 flex items-center justify-center text-2xl">🪙</div>
                 </div>
-            </section>
-        </div>
+            </motion.section>
+        </motion.div>
 
-        <div className="max-w-4xl mx-auto px-6 space-y-20 mb-24">
-            <section className="text-center">
+        <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-6 space-y-20 mb-24">
+            <motion.section variants={itemVariants} className="text-center">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 uppercase">Simple, Rewarding, Calm</h2>
                 
                 <div className="grid md:grid-cols-3 gap-4">
@@ -185,9 +214,9 @@ const ForUsers = () => (
                         <p className="text-sm text-gray-700 leading-relaxed">Check in, try new tools, and watch as your coins grow.</p>
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
-            <section className="text-center">
+            <motion.section variants={itemVariants} className="text-center">
                 <div className="flex justify-center space-x-[-10px] mb-6">
                     <div className="w-8 h-8 rounded-full border-2 border-white bg-white flex items-center justify-center text-purple-600 shadow-sm">💜</div>
                     <div className="w-8 h-8 rounded-full border-2 border-white bg-purple-600 flex items-center justify-center text-white shadow-sm">💜</div>
@@ -228,11 +257,11 @@ const ForUsers = () => (
                     <span className="w-2 h-2 bg-gray-800 rounded-full"></span>
                     <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
                 </div>
-            </section>
-        </div>
+            </motion.section>
+        </motion.div>
 
-        <div className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
-            <section className="text-center">
+        <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
+            <motion.section variants={itemVariants} className="text-center">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 uppercase">Need Answers?</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -261,9 +290,9 @@ const ForUsers = () => (
                         <span className="text-[10px] text-gray-400">▶</span>
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
-            <section className="bg-[#e2ff46] rounded-[40px] p-12 text-center relative overflow-hidden">
+            <motion.section variants={itemVariants} className="bg-[#e2ff46] rounded-[40px] p-12 text-center relative overflow-hidden">
                 <div className="absolute top-4 left-4 w-16 h-16 coin-gradient rounded-full border-4 border-white/30 flex items-center justify-center text-[10px] font-bold opacity-80">50</div>
                 <div className="absolute bottom-8 right-4 w-20 h-20 coin-gradient rounded-full border-4 border-white/30 flex items-center justify-center text-[12px] font-bold opacity-80 rotate-12">50</div>
                 
@@ -278,14 +307,14 @@ const ForUsers = () => (
                         Unlock Rewards Now
                     </button>
                 </div>
-            </section>
-        </div>
-    </>
+            </motion.section>
+        </motion.div>
+    </motion.div>
 );
 
 const ForBrands = () => (
-    <>
-        <main className="max-w-6xl mx-auto text-center mt-16 px-6">
+    <motion.div variants={containerVariants} initial="hidden" animate="visible">
+        <motion.main variants={itemVariants} className="max-w-6xl mx-auto text-center mt-16 px-6">
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-12 max-w-5xl mx-auto uppercase">
                 CONNECT WITH <span className="gradient-text px-4 border-2 border-purple-200 rounded-full italic">TECH</span> PROFESSIONALS WHO ACTUALLY ENGAGE
             </h1>
@@ -306,7 +335,7 @@ const ForBrands = () => (
                 </div>
             </div>
 
-            <section className="mb-32">
+            <motion.section variants={itemVariants} className="mb-32">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-4">Trusted by 20+ forward-thinking brands</p>
                 <p className="text-xs text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
                     Join companies already reaching 10,000+ remote workers and freelancers actively discovering and organizing their digital tools.
@@ -320,13 +349,13 @@ const ForBrands = () => (
                     <div className="flex items-center space-x-2 font-bold text-sm"><span>🌍</span> GlobalBank</div>
                     <div className="flex items-center space-x-2 font-bold text-sm italic"><span>☀</span> Nietzsche</div>
                 </div>
-            </section>
+            </motion.section>
 
-            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight uppercase mb-20">
+            <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-extrabold tracking-tight uppercase mb-20">
                 AMPLIFY YOUR BRAND'S SUCCESS
-            </h2>
-        </main>
-        <section className="max-w-4xl mx-auto px-6 py-20 text-center">
+            </motion.h2>
+        </motion.main>
+        <motion.section variants={itemVariants} className="max-w-4xl mx-auto px-6 py-20 text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight uppercase mb-16">
                 Amplify Your Brand's Success
             </h2>
@@ -375,10 +404,10 @@ const ForBrands = () => (
                     <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Get featured across our Homepage, Discover section, Rewards Hub, Library, Newsletter, and Blog</p>
                 </div>
             </div>
-        </section>
-        <div className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
+        </motion.section>
+        <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
 
-            <section className="bg-black rounded-[40px] p-8 md:p-12 text-white relative overflow-hidden">
+            <motion.section variants={itemVariants} className="bg-black rounded-[40px] p-8 md:p-12 text-white relative overflow-hidden">
                 <div className="relative z-10">
                     <h3 className="text-2xl font-bold mb-4">Measure Your Impact</h3>
                     <p className="text-sm text-gray-400 mb-12 max-w-sm">
@@ -402,9 +431,9 @@ const ForBrands = () => (
                         </div>
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
-            <section className="text-center">
+            <motion.section variants={itemVariants} className="text-center">
                 <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight uppercase mb-16">
                     Why Subscribe to Flowva?
                 </h2>
@@ -460,9 +489,9 @@ const ForBrands = () => (
                         </p>
                     </div>
                 </div>
-            </section>
-        </div>
-        <section className="max-w-4xl mx-auto px-6 py-20 text-center">
+            </motion.section>
+        </motion.div>
+        <motion.section variants={itemVariants} className="max-w-4xl mx-auto px-6 py-20 text-center">
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight uppercase mb-12">
                 How It Works
             </h2>
@@ -502,10 +531,10 @@ const ForBrands = () => (
                     </div>
                 </div>
             </div>
-        </section>
-        <div className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
+        </motion.section>
+        <motion.div variants={containerVariants} className="max-w-4xl mx-auto px-6 space-y-24 mb-24">
 
-            <div className="space-y-6">
+            <motion.div variants={itemVariants} className="space-y-6">
                 <div className="bg-[#15803d] text-white rounded-[40px] p-10 md:p-14 text-left relative overflow-hidden group">
                     <span className="bg-white/20 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block">Step 4</span>
                     <h3 className="text-3xl md:text-4xl font-black mb-4">Track Results</h3>
@@ -527,9 +556,9 @@ const ForBrands = () => (
                         <div className="text-7xl drop-shadow-2xl group-hover:scale-110 transition-transform">👑</div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
-            <section className="text-center">
+            <motion.section variants={itemVariants} className="text-center">
                 <div className="flex justify-center space-x-[-8px] mb-4">
                     <div className="w-8 h-8 rounded-full border-2 border-white bg-purple-100 flex items-center justify-center text-sm shadow-sm">💜</div>
                     <div className="w-8 h-8 rounded-full border-2 border-white bg-purple-600 flex items-center justify-center text-sm shadow-sm">💜</div>
@@ -564,10 +593,10 @@ const ForBrands = () => (
                     <span className="w-1.5 h-1.5 bg-gray-800 rounded-full"></span>
                     <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
                 </div>
-            </section>
+            </motion.section>
 
-        </div>
-    </>
+        </motion.div>
+    </motion.div>
 );
 
 export default function LandingPage() {
@@ -575,29 +604,35 @@ export default function LandingPage() {
 
     return (
         <div className="bg-white text-gray-900">
-            <div className="bg-black text-white text-xs py-2 text-center px-4">
-                🚀 Big news! The full Flowva experience + mobile apps are launching soon on iOS & Android
-            </div>
+            <motion.div initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
+                <div className="bg-black text-white text-xs py-2 text-center px-4">
+                    🚀 Big news! The full Flowva experience + mobile apps are launching soon on iOS & Android
+                </div>
 
-            <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
-                <div className="flex items-center space-x-8">
-                    <div className="flex items-center space-x-1 font-bold text-xl">
-                        <span className="text-purple-600">●</span><span>Flowva</span>
+                <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+                    <div className="flex items-center space-x-8">
+                        <div className="flex items-center space-x-1 font-bold text-xl">
+                            <span className="text-purple-600">●</span><span>Flowva</span>
+                        </div>
+                        <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-500">
+                            <a href="#" className="hover:text-black">Hub ▾</a>
+                            <a href="#" className="hover:text-black">Company ▾</a>
+                            <a href="#" className="hover:text-black">Support ▾</a>
+                            <a href="#" className="hover:text-black">Community ▾</a>
+                        </nav>
                     </div>
-                    <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-500">
-                        <a href="#" className="hover:text-black">Hub ▾</a>
-                        <a href="#" className="hover:text-black">Company ▾</a>
-                        <a href="#" className="hover:text-black">Support ▾</a>
-                        <a href="#" className="hover:text-black">Community ▾</a>
-                    </nav>
-                </div>
-                <div className="flex items-center space-x-4">
-                    <Link href="/login" className="text-sm font-semibold px-4 py-2">Login</Link>
-                    <Link href="/signup" className="text-sm font-semibold bg-gray-900 text-white px-5 py-2 rounded-full">Sign up</Link>
-                </div>
-            </header>
+                    <div className="flex items-center space-x-4">
+                        <Link href="/login" className="text-sm font-semibold px-4 py-2">Login</Link>
+                        <Link href="/signup" className="text-sm font-semibold bg-gray-900 text-white px-5 py-2 rounded-full">Sign up</Link>
+                    </div>
+                </header>
+            </motion.div>
 
-            <div className="max-w-4xl mx-auto text-center mt-16 px-6">
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="max-w-4xl mx-auto text-center mt-16 px-6">
                 <div className="inline-flex bg-gray-100 p-1 rounded-full mb-12">
                     <button 
                         onClick={() => setActiveTab('users')}
@@ -610,11 +645,16 @@ export default function LandingPage() {
                         <span className="mr-2">🏢</span> For brands
                     </button>
                 </div>
-            </div>
+            </motion.div>
 
             {activeTab === 'users' ? <ForUsers /> : <ForBrands />}
 
-            <footer className="bg-black text-white pt-20 pb-10 px-6">
+            <motion.footer 
+                 initial="hidden"
+                 whileInView="visible"
+                 viewport={{ once: true, amount: 0.2 }}
+                 variants={itemVariants}
+                className="bg-black text-white pt-20 pb-10 px-6">
                 <div className="max-w-6xl mx-auto">
                     <div className="bg-[#1a1a1a] rounded-[32px] p-8 mb-20 text-center max-w-2xl mx-auto">
                         <div className="mb-6 flex justify-center">
@@ -685,7 +725,7 @@ export default function LandingPage() {
                         <a href="#" className="flex items-center hover:text-white"><span className="mr-2"></span> Tiktok</a>
                     </div>
                 </div>
-            </footer>
+            </motion.footer>
              <div className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg cursor-pointer">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
