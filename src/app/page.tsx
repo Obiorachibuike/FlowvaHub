@@ -50,74 +50,70 @@ const ForUsers = () => (
             <motion.p variants={itemVariants} className="mt-16 text-xl md:text-2xl text-gray-800 font-medium max-w-2xl mx-auto leading-relaxed">
                 Turn productivity into rewards with a calm, smart space that organizes your tools, and keeps you in control.
             </motion.p>
+            
+            <motion.div variants={itemVariants} className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
+    
+                <div class="bg-[#f3e8ff] p-8 rounded-3xl border border-purple-100 shadow-sm">
+                <h2 class="text-5xl font-semibold mb-2">10,000+</h2>
+                <p class="text-xl font-medium mb-8">Users</p>
+                <p class="text-gray-600 mb-8">Already simplifying their workflow with Flowva</p>
+                <div class="flex items-center">
+                    <div class="flex -space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
+                    <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-white"></div>
+                    <div class="w-8 h-8 rounded-full bg-gray-500 border-2 border-white"></div>
+                    </div>
+                    <span class="ml-3 text-sm font-semibold text-gray-700">10,000+</span>
+                </div>
+                </div>
 
-            <motion.div variants={containerVariants} className="grid md:grid-cols-3 gap-6 mt-20 mb-20 text-left">
-                <motion.div variants={itemVariants}>
-                    <Card className="bg-purple-50 p-8 rounded-3xl border border-purple-100">
-                        <CardContent className="p-0">
-                            <h3 className="text-4xl font-bold mb-2">10,000+</h3>
-                            <p className="font-semibold text-gray-600 mb-6">Users</p>
-                            <p className="text-sm text-gray-400">Already simplifying their workflow with Flowva</p>
-                            <div className="mt-8 text-xs font-bold text-gray-400">10,000+</div>
-                        </CardContent>
-                    </Card>
-                </motion.div>
+                <div class="bg-[#f3e8ff] p-8 rounded-3xl border border-purple-100 shadow-sm">
+                <h2 class="text-5xl font-semibold mb-2">200+</h2>
+                <p class="text-xl font-medium mb-8">Tools</p>
+                <p class="text-gray-600 mb-8">Curated and organized for you in the library</p>
+                <div class="flex items-center">
+                    <div class="flex gap-1">
+                    <div class="w-6 h-6 rounded bg-indigo-600"></div>
+                    <div class="w-6 h-6 rounded bg-orange-500"></div>
+                    <div class="w-6 h-6 rounded bg-blue-400"></div>
+                    </div>
+                    <span class="ml-3 text-sm font-semibold text-gray-700">and many more</span>
+                </div>
+                </div>
 
-                <motion.div variants={itemVariants}>
-                    <Card className="bg-purple-50 p-8 rounded-3xl border border-purple-100">
-                        <CardContent className="p-0">
-                            <h3 className="text-4xl font-bold mb-2">200+</h3>
-                            <p className="font-semibold text-gray-600 mb-6">Tools</p>
-                            <p className="text-sm text-gray-400">Curated and organized for you in the library</p>
-                            <div className="mt-8 flex space-x-1 grayscale opacity-50">
-                                <span className="bg-gray-800 p-1 rounded text-white text-[8px]">⌨️</span>
-                                <span className="bg-gray-800 p-1 rounded text-white text-[8px]">📷</span>
-                                <span className="bg-gray-800 p-1 rounded text-white text-[8px]">🎨</span>
-                                <span className="text-[8px] self-center ml-2 text-gray-500">and many more</span>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </motion.div>
-
-                <motion.div variants={itemVariants}>
-                    <Card className="bg-purple-50 p-8 rounded-3xl border border-purple-100">
-                        <CardContent className="p-0">
-                            <h3 className="text-4xl font-bold mb-2">25+</h3>
-                            <p className="font-semibold text-gray-600 mb-6">Countries</p>
-                            <p className="text-sm text-gray-400">Reviewing tools and building smarter stacks every day</p>
-                            <div className="mt-8 flex space-x-2 text-lg">
-                                🇳🇬 🇺🇸 🇮🇳 🇨🇦 🇰🇪 🇬🇧
-                            </div>
-                        </CardContent>
-                    </Card>
-                </motion.div>
+                <div class="bg-[#f3e8ff] p-8 rounded-3xl border border-purple-100 shadow-sm">
+                <h2 class="text-5xl font-semibold mb-2">25+</h2>
+                <p class="text-xl font-medium mb-8">Countries</p>
+                <p class="text-gray-600 mb-8">Reviewing tools and building smarter stacks every day</p>
+                <div class="flex gap-2 text-xl">
+                    <span>🇳🇬</span><span>🇺🇸</span><span>🇮🇳</span><span>🇨🇦</span><span>🇵🇭</span><span>🇰🇪</span><span>🇬🇧</span>
+                </div>
+                </div>
             </motion.div>
+
         </motion.main>
         
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="max-w-4xl mx-auto px-6 space-y-12 mb-20">
-            <motion.section variants={itemVariants} className="bg-[#f3e8ff] rounded-[40px] p-8 md:p-12 text-center overflow-hidden relative">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12">EVERYTHING IN ONE PLACE</h2>
+            <motion.section variants={itemVariants} className="max-w-4xl mx-auto bg-[#c2f2bb] rounded-[40px] p-12 text-center">
+                <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-16 uppercase">
+                Everything in one<br/>place
+                </h1>
                 
-                <div className="relative flex justify-center items-end h-64">
-                    <div className="absolute -left-10 bottom-0 w-48 h-56 bg-white/50 rounded-2xl shadow-sm transform -rotate-6"></div>
-                    
-                    <div className="bg-white rounded-3xl shadow-xl p-6 w-full max-w-md z-10 text-left">
-                        <div className="grid grid-cols-5 gap-3 mb-6">
-                            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">🎁</div>
-                            <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">🛠️</div>
-                            <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">💵</div>
-                            <div className="w-10 h-10 coin-gradient rounded-full"></div>
-                            <div className="w-10 h-10 bg-blue-500 rounded-lg"></div>
-                        </div>
-                        <h4 className="font-bold text-sm mb-1">Get Rewarded</h4>
-                        <p className="text-[10px] text-gray-500 leading-tight">Earn perks, gift cards and cashback just for staying productive.</p>
+                <div class="flex flex-col md:flex-row justify-center items-end gap-8">
+                <div class="bg-white rounded-3xl p-6 shadow-xl w-full max-w-sm text-left">
+                    <div class="bg-blue-50 rounded-2xl h-48 mb-6 flex items-center justify-center relative overflow-hidden">
+                    <div class="w-24 h-20 bg-gray-100 rounded-lg border-2 border-gray-200 shadow-inner flex items-center justify-center">
+                        <span class="text-2xl">📁</span>
                     </div>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Organize your tools</h3>
+                    <p class="text-gray-500 text-sm">Keep your apps, subscriptions, and tech stack in one simple space.</p>
                 </div>
-                
-                <div className="flex justify-center space-x-2 mt-8">
-                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
-                    <span className="w-2 h-2 bg-gray-800 rounded-full"></span>
-                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
+
+                <div class="bg-white/50 rounded-3xl p-6 w-full max-w-[200px] text-left opacity-80 scale-95 hidden md:block">
+                    <div class="bg-gray-100/50 rounded-2xl h-40 mb-4"></div>
+                    <h3 class="font-bold text-sm text-gray-600">Discover what works</h3>
+                </div>
                 </div>
             </motion.section>
 
@@ -308,7 +304,7 @@ const ForBrands = () => (
                 CONNECT WITH <span className="gradient-text px-4 border-2 border-purple-200 rounded-full italic">TECH</span> PROFESSIONALS WHO ACTUALLY ENGAGE
             </h1>
 
-            <button className="bg-gray-900 text-white px-10 py-4 rounded-full font-black text-sm shadow-2xl hover:scale-105 transition-all mb-20 uppercase tracking-widest">
+            <button className="bg-black text-white px-10 py-4 rounded-full font-black text-sm shadow-2xl hover:scale-105 transition-all mb-20 uppercase tracking-widest">
                 Start Your 3-Day Free Trial
             </button>
 
@@ -611,7 +607,7 @@ export default function LandingPage() {
                     </div>
                     <div className="flex items-center space-x-4">
                         <Link href="/login" className="text-sm font-semibold px-4 py-2">Login</Link>
-                        <Link href="/signup" className="text-sm font-semibold bg-gray-900 text-white px-5 py-2 rounded-full">Sign up</Link>
+                        <Link href="/signup" className="text-sm font-semibold bg-gray-900 text-white px-5 py-2 rounded-full focus-visible:outline-none">Sign up</Link>
                     </div>
                 </header>
             </motion.div>
@@ -624,13 +620,13 @@ export default function LandingPage() {
                 <div className="inline-flex bg-gray-100 p-1 rounded-full mb-12">
                     <button 
                         onClick={() => setActiveTab('users')}
-                        className={`px-4 py-1.5 rounded-full text-xs font-medium flex items-center ${activeTab === 'users' ? 'bg-gray-800 text-white' : 'text-gray-500'}`}>
-                        <span className="mr-2">👥</span> For users
+                        className={`px-4 py-1.5 rounded-full text-xs font-medium flex items-center transition-colors duration-300 ${activeTab === 'users' ? 'bg-white shadow-md' : 'text-gray-500'}`}>
+                        <span className={`mr-2 ${activeTab === 'users' ? 'gradient-text' : ''}`}>👥</span> <span className={activeTab === 'users' ? 'gradient-text' : ''}>For users</span>
                     </button>
                     <button 
                         onClick={() => setActiveTab('brands')}
-                        className={`px-4 py-1.5 rounded-full text-xs font-medium flex items-center ${activeTab === 'brands' ? 'bg-gray-800 text-white' : 'text-gray-500'}`}>
-                        <span className="mr-2">🏢</span> For brands
+                        className={`px-4 py-1.5 rounded-full text-xs font-medium flex items-center transition-colors duration-300 ${activeTab === 'brands' ? 'bg-white shadow-md' : 'text-gray-500'}`}>
+                        <span className={`mr-2 ${activeTab === 'brands' ? 'gradient-text' : ''}`}>🏢</span> <span className={activeTab === 'brands' ? 'gradient-text' : ''}>For brands</span>
                     </button>
                 </div>
             </motion.div>
