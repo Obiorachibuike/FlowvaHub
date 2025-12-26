@@ -6,6 +6,13 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ScrollingLogos } from '@/components/landing/ScrollingLogos';
 import { ImageSlider } from '@/components/landing/ImageSlider';
@@ -218,39 +225,42 @@ const ForUsers = () => (
                 
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 uppercase">Join a Growing Community</h2>
 
-                <div className="flex flex-col md:flex-row gap-6 items-stretch">
-                    <div className="bg-[#6dd5ff] p-8 rounded-[20px] text-left flex-1 flex flex-col justify-between shadow-lg">
-                        <div>
-                            <p className="text-[15px] font-medium leading-relaxed mb-6">
-                                Flowvahub makes finding tools effortless. Instead of wasting hours jumping between sites, I just open Discover Tools everything's clear, organized, and right there. Feels less like searching, more like unlocking possibilities. ☕️ 💜
-                            </p>
-                        </div>
-                        <div>
-                            <div className="flex text-black text-sm mb-1">★★★★★</div>
-                            <p className="font-bold text-sm">Ummaratu M.</p>
-                            <p className="text-[11px] opacity-80 uppercase tracking-wider">Freelancer & Virtual Assistant</p>
-                        </div>
+                 <Carousel className="w-full max-w-4xl mx-auto" opts={{ loop: true }}>
+                    <CarouselContent>
+                        <CarouselItem>
+                            <div className="bg-[#6dd5ff] p-8 rounded-[20px] text-left flex-1 flex flex-col justify-between shadow-lg h-full">
+                                <div>
+                                    <p className="text-[15px] font-medium leading-relaxed mb-6">
+                                        Flowvahub makes finding tools effortless. Instead of wasting hours jumping between sites, I just open Discover Tools everything's clear, organized, and right there. Feels less like searching, more like unlocking possibilities. ☕️ 💜
+                                    </p>
+                                </div>
+                                <div>
+                                    <div className="flex text-black text-sm mb-1">★★★★★</div>
+                                    <p className="font-bold text-sm">Ummaratu M.</p>
+                                    <p className="text-[11px] opacity-80 uppercase tracking-wider">Freelancer & Virtual Assistant</p>
+                                </div>
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                             <div className="bg-[#faff6d] p-8 rounded-[20px] text-left flex-1 flex flex-col justify-between shadow-lg h-full">
+                                <div>
+                                    <p className="text-[15px] font-medium leading-relaxed mb-6">
+                                        Flowvahub is my new sidekick. It keeps my apps in line, my subs in check, and still finds a way to pay me in rewards. If it could make coffee, I'd marry it
+                                    </p>
+                                </div>
+                                <div>
+                                    <div className="flex text-black text-sm mb-1">★★★★★</div>
+                                    <p className="font-bold text-sm">Adewale O.</p>
+                                    <p className="text-[11px] opacity-80 uppercase tracking-wider">Freelancer & Digital Creator</p>
+                                </div>
+                            </div>
+                        </CarouselItem>
+                    </CarouselContent>
+                    <div className="flex justify-center space-x-2 mt-8">
+                      <CarouselPrevious className="static translate-y-0" />
+                      <CarouselNext className="static translate-y-0" />
                     </div>
-
-                    <div className="bg-[#faff6d] p-8 rounded-[20px] text-left flex-1 flex flex-col justify-between shadow-lg">
-                        <div>
-                            <p className="text-[15px] font-medium leading-relaxed mb-6">
-                                Flowvahub is my new sidekick. It keeps my apps in line, my subs in check, and still finds a way to pay me in rewards. If it could make coffee, I'd marry it
-                            </p>
-                        </div>
-                        <div>
-                            <div className="flex text-black text-sm mb-1">★★★★★</div>
-                            <p className="font-bold text-sm">Adewale O.</p>
-                            <p className="text-[11px] opacity-80 uppercase tracking-wider">Freelancer & Digital Creator</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="flex justify-center space-x-2 mt-12">
-                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
-                    <span className="w-2 h-2 bg-gray-800 rounded-full"></span>
-                    <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
-                </div>
+                </Carousel>
             </motion.section>
         </motion.div>
 
@@ -608,7 +618,7 @@ export default function LandingPage() {
                             <span className="text-purple-600">●</span><span>Flowva</span>
                         </Link>
                         <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-500">
-                            <a href="#" className="hover:text-black">Home</a>
+                            <Link href="/" className="hover:text-black">Home</Link>
                             <a href="#" className="hover:text-black">Hub ▾</a>
                             <a href="#" className="hover:text-black">Company ▾</a>
                             <a href="#" className="hover:text-black">Support ▾</a>
@@ -738,5 +748,7 @@ export default function LandingPage() {
     );
 }
 
+
+    
 
     
