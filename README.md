@@ -71,3 +71,4 @@ The application should now be running at [http://localhost:3000](http://localhos
 - **AI Suggestions with Mock Data:** The "AI Suggestion" feature (`RewardSuggester.tsx`) currently uses a mock purchase history and a static list of available rewards (`MOCK_REWARDS`). This was done to simplify the demo and avoid the need for a real purchase history table. In a production environment, this would be replaced with real user data.
 - **Server Actions for Mutations:** The `claimReward` function is implemented as a Next.js Server Action (`src/actions/rewards.ts`). This provides a secure way to perform mutations from the client without exposing an API endpoint.
 - **Realtime Updates:** The application uses Supabase's realtime subscriptions to update the transaction history and user points in real-time when a reward is claimed.
+# FlowvaHub
