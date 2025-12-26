@@ -517,7 +517,7 @@ const ForBrands = () => (
 
                 <div className="bg-[#f43f5e] text-white rounded-[40px] p-10 md:p-14 text-left relative overflow-hidden group">
                     <span className="bg-white/20 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block">Step 3</span>
-                    <h3 className="text-3xl md:text-4xl font-black mb-4">Engage Users</h3>
+                    <h3 className="text-3xl md-text-4xl font-black mb-4">Engage Users</h3>
                     <p className="text-sm font-medium opacity-90 max-w-xs mb-10">Offer perks and rewards that drive deeper participation.</p>
                     
                     <div className="flex justify-center mt-4">
@@ -604,10 +604,11 @@ export default function LandingPage() {
 
                 <header className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
                     <div className="flex items-center space-x-8">
-                        <div className="flex items-center space-x-1 font-bold text-xl">
+                        <Link href="/" className="flex items-center space-x-1 font-bold text-xl">
                             <span className="text-purple-600">●</span><span>Flowva</span>
-                        </div>
+                        </Link>
                         <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-500">
+                            <a href="#" className="hover:text-black">Home</a>
                             <a href="#" className="hover:text-black">Hub ▾</a>
                             <a href="#" className="hover:text-black">Company ▾</a>
                             <a href="#" className="hover:text-black">Support ▾</a>
@@ -737,3 +738,5 @@ export default function LandingPage() {
     );
 }
 
+
+    
