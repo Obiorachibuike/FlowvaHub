@@ -1,11 +1,11 @@
 
 'use client';
 import { motion } from 'framer-motion';
-import { PointsCard } from './components/PointsCard';
-import { RewardGrid } from './components/RewardGrid';
-import { RewardSuggester } from './components/RewardSuggester';
-import { TransactionHistory } from './components/TransactionHistory';
-
+import { Header } from './components/Header';
+import { AnnouncementCard } from './components/AnnouncementCard';
+import { StatCards } from './components/StatCards';
+import { TopPicks } from './components/TopPicks';
+import { CtaCards } from './components/CtaCards';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -34,13 +34,12 @@ export default function RewardsPage() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
-      <motion.div variants={containerVariants} className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
-        <motion.div variants={itemVariants}><PointsCard /></motion.div>
-        <motion.div variants={itemVariants}><RewardSuggester /></motion.div>
-      </motion.div>
-      <motion.div variants={itemVariants}><RewardGrid /></motion.div>
-      <motion.div variants={itemVariants}><TransactionHistory /></motion.div>
+      className="max-w-4xl mx-auto flex flex-col gap-4">
+        <motion.div variants={itemVariants}><Header /></motion.div>
+        <motion.div variants={itemVariants}><AnnouncementCard /></motion.div>
+        <motion.div variants={itemVariants}><StatCards /></motion.div>
+        <motion.div variants={itemVariants}><TopPicks /></motion.div>
+        <motion.div variants={itemVariants}><CtaCards /></motion.div>
     </motion.div>
   );
 }

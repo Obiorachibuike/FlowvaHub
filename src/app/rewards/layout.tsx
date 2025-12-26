@@ -11,7 +11,8 @@ import {
 import { Logo } from '@/components/icons/Logo';
 import { UserNav } from '@/components/auth/UserNav';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { PanelLeft } from 'lucide-react';
+import { Menu, Bell } from 'lucide-react';
+import { useSupabaseUser } from '@/contexts/SupabaseProvider';
 
 export default function RewardsLayout({
   children,
@@ -58,39 +59,7 @@ export default function RewardsLayout({
             </Tooltip>
           </nav>
         </aside>
-        <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
-          <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button size="icon" variant="outline" className="sm:hidden">
-                  <PanelLeft className="h-5 w-5" />
-                  <span className="sr-only">Toggle Menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="sm:max-w-xs">
-                <nav className="grid gap-6 text-lg font-medium">
-                  <Link
-                    href="/"
-                    className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
-                  >
-                     <Logo className="h-5 w-5 transition-all group-hover:scale-110" />
-                    <span className="sr-only">FlowvaHub</span>
-                  </Link>
-                  <Link
-                    href="/rewards"
-                    className="flex items-center gap-4 px-2.5 text-foreground"
-                  >
-                    <Gift className="h-5 w-5" />
-                    Rewards
-                  </Link>
-                </nav>
-              </SheetContent>
-            </Sheet>
-            <h1 className="text-xl font-semibold">Rewards</h1>
-            <div className="relative ml-auto flex-1 md:grow-0">
-            </div>
-            <UserNav />
-          </header>
+        <div className="flex flex-col sm:pl-14">
           <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
             {children}
           </main>
