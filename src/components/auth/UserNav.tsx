@@ -15,21 +15,35 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useSupabaseUser } from '@/contexts/SupabaseProvider';
 import { LogOut, User as UserIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { supabase } from '@/lib/supabase';
+import type { User } from '@supabase/supabase-js';
+import type { Profile } from '@/types/database';
 
-export function UserNav() {
-  const { user, profile, supabase } = useSupabaseUser();
+interface UserNavProps {
+  user: User | null;
+  profile: Profile | null;
+}
+
+export function UserNav({ user, profile }: UserNavProps) {
   const router = useRouter();
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
-    router.push('/login');
+    router.refresh();
   };
   
   const getInitials = (email: string | undefined) => {
     if (!email) return 'U';
+    const name = profile?.full_name;
+    if (name) {
+      const nameParts = name.split(' ');
+      if (nameParts.length > 1) {
+        return nameParts[0][0] + nameParts[1][0];
+      }
+      return name.substring(0, 2);
+    }
     return email.substring(0, 2).toUpperCase();
   }
 
@@ -49,7 +63,7 @@ export function UserNav() {
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">My Account</p>
+            <p className="text-sm font-medium leading-none">{profile?.full_name || 'My Account'}</p>
             <p className="text-xs leading-none text-muted-foreground">
               {user?.email}
             </p>

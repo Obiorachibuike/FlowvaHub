@@ -1,28 +1,26 @@
-import { type NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { createSupabaseServerClient } from '@/lib/supabase';
 
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next();
-  const supabase = createClient(req.cookies);
+
+  const supabase = createSupabaseServerClient(req.cookies);
 
   const {
-    data: { session },
-  } = await supabase.auth.getSession();
+    data: { user },
+  } = await supabase.auth.getUser();
 
   const { pathname } = req.nextUrl;
 
   // Redirect to login if not authenticated and trying to access protected routes
-  if (!session && pathname.startsWith('/rewards')) {
-    const url = req.nextUrl.clone();
-    url.pathname = '/login';
-    return NextResponse.redirect(url);
+  if (!user && pathname.startsWith('/rewards')) {
+    return NextResponse.redirect(new URL('/login', req.url));
   }
 
   // Redirect to rewards if authenticated and on login page
-  if (session && pathname === '/login') {
-    const url = req.nextUrl.clone();
-    url.pathname = '/rewards';
-    return NextResponse.redirect(url);
+  if (user && (pathname === '/login' || pathname === '/signup' || pathname === '/forgot-password')) {
+    return NextResponse.redirect(new URL('/rewards', req.url));
   }
 
   return res;

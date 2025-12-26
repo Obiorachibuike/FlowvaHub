@@ -1,8 +1,9 @@
 export type Profile = {
   id: string; // UUID from auth.users
   email: string;
-  total_points: number;
+  full_name: string | null;
   avatar_url: string | null;
+  total_points: number; // Added for rewards app
   created_at: string;
 };
 
@@ -23,3 +24,12 @@ export type UserReward = {
   status: 'claimed' | 'pending';
   created_at: string;
 };
+
+// Example protected resource from the senior-level doc
+export type Project = {
+  id: string; // uuid
+  user_id: string; // uuid
+  title: string;
+  description: string | null;
+  created_at: string;
+}

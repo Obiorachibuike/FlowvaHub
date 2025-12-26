@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useSupabaseUser } from '@/contexts/SupabaseProvider';
 import type { Reward } from '@/types/database';
 import { RewardItem } from './RewardItem';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
+import { supabase } from '@/lib/supabase';
 
 function RewardSkeleton() {
   return (
@@ -27,7 +27,6 @@ function RewardSkeleton() {
 
 
 export function RewardGrid() {
-  const { supabase } = useSupabaseUser();
   const [rewards, setRewards] = useState<Reward[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -53,7 +52,7 @@ export function RewardGrid() {
     };
 
     fetchRewards();
-  }, [supabase]);
+  }, []);
 
   if (loading) {
     return (
@@ -72,7 +71,7 @@ export function RewardGrid() {
   }
 
   return (
-    <div className="grid gap-4 md:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="grid gap-4 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {rewards.map((reward) => (
         <RewardItem key={reward.id} reward={reward} />
       ))}

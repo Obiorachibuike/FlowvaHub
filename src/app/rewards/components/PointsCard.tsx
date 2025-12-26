@@ -2,13 +2,50 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useSupabaseUser } from '@/contexts/SupabaseProvider';
 import { Star } from 'lucide-react';
+import type { Profile } from '@/types/database';
+import { useEffect, useState } from 'react';
+import { supabase } from '@/lib/supabase';
 
-export function PointsCard() {
-  const { profile, isLoading } = useSupabaseUser();
+interface PointsCardProps {
+  profile: Profile | null;
+}
 
-  if (isLoading || !profile) {
+export function PointsCard({ profile: initialProfile }: PointsCardProps) {
+  const [profile, setProfile] = useState(initialProfile);
+  const [loading, setLoading] = useState(!initialProfile);
+
+  useEffect(() => {
+    setProfile(initialProfile);
+    if(initialProfile) setLoading(false);
+  }, [initialProfile]);
+
+  useEffect(() => {
+    if (!initialProfile?.id) return;
+
+    const channel = supabase
+      .channel(`profile-points-changes-${initialProfile.id}`)
+      .on<Profile>(
+        'postgres_changes',
+        {
+          event: 'UPDATE',
+          schema: 'public',
+          table: 'profiles',
+          filter: `id=eq.${initialProfile.id}`,
+        },
+        (payload) => {
+          setProfile(payload.new as Profile);
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [initialProfile]);
+
+
+  if (loading || !profile) {
     return (
         <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

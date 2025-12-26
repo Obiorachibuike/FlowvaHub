@@ -1,12 +1,12 @@
 'use server';
 
-import { createClient } from '@/lib/supabase';
+import { createSupabaseServerClient } from '@/lib/supabase';
 import { cookies } from 'next/headers';
 import { revalidatePath } from 'next/cache';
 
 export async function claimReward(rewardId: string): Promise<{ success: boolean; message: string }> {
   const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createSupabaseServerClient(cookieStore);
 
   const {
     data: { user },

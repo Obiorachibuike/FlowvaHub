@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import { useToast } from '@/hooks/use-toast';
-import { useSupabaseUser } from '@/contexts/SupabaseProvider';
+import { supabase } from '@/lib/supabase';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email.' }),
@@ -19,7 +19,6 @@ type UserFormValue = z.infer<typeof formSchema>;
 
 export default function ForgotPasswordPage() {
   const [isLoading, setIsLoading] = useState(false);
-  const { supabase } = useSupabaseUser();
   const { toast } = useToast();
 
   const {

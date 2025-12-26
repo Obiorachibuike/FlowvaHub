@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import { useToast } from '@/hooks/use-toast';
-import { useSupabaseUser } from '@/contexts/SupabaseProvider';
+import { supabase } from '@/lib/supabase';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email.' }),
@@ -28,7 +28,6 @@ export default function SignupPage() {
   const [isOauthLoading, setOauthIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const { supabase } = useSupabaseUser();
   const router = useRouter();
   const { toast } = useToast();
 

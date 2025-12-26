@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import { useToast } from '@/hooks/use-toast';
-import { useSupabaseUser } from '@/contexts/SupabaseProvider';
+import { supabase } from '@/lib/supabase';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email.' }),
@@ -23,7 +23,6 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [isOauthLoading, setOauthIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const { supabase } = useSupabaseUser();
   const router = useRouter();
   const { toast } = useToast();
 
@@ -45,9 +44,9 @@ export default function LoginPage() {
       email: data.email,
       password: data.password,
     });
-    setIsLoading(false);
-
+    
     if (error) {
+      setIsLoading(false);
       toast({
         variant: 'destructive',
         title: 'Login Failed',
@@ -58,7 +57,8 @@ export default function LoginPage() {
         title: 'Login Successful',
         description: "Welcome back! You're being redirected.",
       });
-      router.push('/rewards');
+      // useRouter.refresh() is needed to trigger the middleware
+      router.refresh();
     }
   };
 

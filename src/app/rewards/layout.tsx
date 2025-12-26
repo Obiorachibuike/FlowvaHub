@@ -1,7 +1,6 @@
 import { Home, Gift, History, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 
-import { Button } from '@/components/ui/button';
 import {
   Tooltip,
   TooltipContent,
@@ -10,15 +9,20 @@ import {
 } from '@/components/ui/tooltip';
 import { Logo } from '@/components/icons/Logo';
 import { UserNav } from '@/components/auth/UserNav';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Bell } from 'lucide-react';
-import { useSupabaseUser } from '@/contexts/SupabaseProvider';
+import { Header } from './components/Header';
+import { createSupabaseServerClient } from '@/lib/supabase';
+import { cookies }from 'next/headers';
 
-export default function RewardsLayout({
+export default async function RewardsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+  const supabase = createSupabaseServerClient(cookies());
+  const { data: { user } } = await supabase.auth.getUser();
+  const { data: profile } = await supabase.from('profiles').select('*').eq('id', user!.id).single();
+
   return (
     <TooltipProvider>
       <div className="flex min-h-screen w-full flex-col bg-muted/40">
@@ -60,9 +64,16 @@ export default function RewardsLayout({
           </nav>
         </aside>
         <div className="flex flex-col sm:pl-14">
-          <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
-            {children}
-          </main>
+            <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+                <Header profile={profile}/>
+                <div className="relative ml-auto flex-1 md:grow-0">
+                  {/* Search bar can go here */}
+                </div>
+                <UserNav user={user} profile={profile} />
+            </header>
+            <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
+              {children}
+            </main>
         </div>
       </div>
     </TooltipProvider>

@@ -20,7 +20,8 @@ import {
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useSupabaseUser } from '@/contexts/SupabaseProvider';
+import { supabase } from '@/lib/supabase';
+import type { User } from '@supabase/supabase-js';
 
 type Transaction = {
   id: number;
@@ -33,9 +34,18 @@ type Transaction = {
 };
 
 export function TransactionHistory() {
-  const { supabase, user } = useSupabaseUser();
+  const [user, setUser] = useState<User | null>(null);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getUser = async () => {
+        const { data: { user } } = await supabase.auth.getUser();
+        setUser(user);
+    }
+    getUser();
+  }, []);
+
 
   useEffect(() => {
     if (!user) return;
@@ -66,7 +76,7 @@ export function TransactionHistory() {
     };
 
     fetchTransactions();
-  }, [supabase, user]);
+  }, [user]);
   
   // Real-time updates for new transactions
   useEffect(() => {
@@ -104,7 +114,7 @@ export function TransactionHistory() {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [supabase, user]);
+  }, [user]);
 
   return (
     <Card>
