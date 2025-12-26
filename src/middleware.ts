@@ -1,3 +1,4 @@
+
 import { type NextRequest, NextResponse } from 'next/server';
 import { createSupabaseServerClient } from '@/lib/supabase';
 
@@ -18,7 +19,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // Redirect to rewards if authenticated and on login page
+  // Redirect to rewards if authenticated and on login/signup page
   if (session && (pathname === '/login' || pathname === '/signup' || pathname === '/forgot-password')) {
     const url = req.nextUrl.clone();
     url.pathname = '/rewards';
